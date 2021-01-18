@@ -1,2 +1,105 @@
-// $<имя_переменной>
+// $<имя_переменной>: <значение>
 // %<имя_болока> {...} --> use: @extend <имя_блока>
+
+$text-color-brown-dark: #573828;
+$text-color-brown: #906047;
+$text-color-brown-light: #c79276;
+$text-color-tyffany: #40726f;
+$bg-color-tiffany: #e6fffb;
+$bg-color-tiffany-light: #fbfffe;
+$bg-color-tiffany-dark: #bdfff4;
+
+// BUTTON & LINK
+%nav-link {
+    outline: none;
+    border-bottom: 1px solid transparent;
+    font-size: 30px;
+    line-height: 36px;
+    color: $text-color-brown-dark;
+
+    &:focus {
+        color: $text-color-tyffany;
+    }
+
+    &:hover {
+        border-bottom-color: $text-color-brown-light;
+        color: $text-color-brown-light;
+    }
+
+    &:active {
+        border-bottom-color: transparent;
+        color: $text-color-tyffany;
+    }
+
+    @extend %C-600;
+}
+
+%order-btn {
+    outline: none;
+    border: 2px solid $text-color-brown;
+    border-radius: 38px;
+    width: 370px;
+    height: 78px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    line-height: 33px;
+    color: $text-color-brown;
+    background-color: $bg-color-tiffany;
+
+    &:focus {
+        border-color: $text-color-tyffany;
+    }
+
+    &:hover {
+        background-color: $bg-color-tiffany-light;
+    }
+
+    &:active {
+        background-color: $bg-color-tiffany-dark;
+    }
+
+    @extend %F-400;
+}
+
+// DISPLAY
+%dfsbc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// TEXT
+%title-h2 {
+    font-size: 55px;
+    line-height: 76px;
+
+    @extend %P-400;
+}
+
+// BACKGROUND
+%bg-center {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// fonts
+%C-600 {
+    font-family: "Cormorant-Bold", serif;
+    font-weight: 600;
+}
+
+%F-400 {
+    font-family: "Forum-Regular", serif;
+    font-weight: 400;
+}
+
+%N-400 {
+    font-family: "Nunito-Regular", serif;
+    font-weight: 400;
+}
+
+%P-400 {
+    font-family: "Pattaya-Regular", serif;
+    font-weight: 400;
+}

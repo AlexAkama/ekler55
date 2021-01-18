@@ -1,9 +1,53 @@
+// @font-face {
+//     src:
+//         local(""),
+//         url(../fonts/) format("woff2"),
+//         url(../fonts/) format("woff");
+//     font-family: "";
+//     font-weight: 400;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
 @font-face {
     src:
-        local(""),
-        url(../fonts/) format("woff2"),
-        url(../fonts/) format("woff");
-    font-family: "";
+        local("Cormorant-Bold"),
+        url(../fonts/Cormorant-Bold.woff2) format("woff2"),
+        url(../fonts/Cormorant-Bold.woff) format("woff");
+    font-family: "Cormorant-Bold";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src:
+        local("Forum-Regular"),
+        url(../fonts/Forum-Regular.woff2) format("woff2"),
+        url(../fonts/Forum-Regular.woff) format("woff");
+    font-family: "Forum-Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src:
+        local("Nunito-Regular"),
+        url(../fonts/Nunito-Regular.woff2) format("woff2"),
+        url(../fonts/Nunito-Regular.woff) format("woff");
+    font-family: "Nunito-Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    src:
+        local("Pattaya-Regular"),
+        url(../fonts/Pattaya-Regular.woff2) format("woff2"),
+        url(../fonts/Pattaya-Regular.woff) format("woff");
+    font-family: "Pattaya-Regular";
     font-weight: 400;
     font-style: normal;
     font-display: swap;

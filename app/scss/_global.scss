@@ -1,0 +1,9 @@
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.order-btn {
+    @extend %order-btn;
+}

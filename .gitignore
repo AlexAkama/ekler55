@@ -10,7 +10,7 @@ npm-degug.*
 *.rar
 
 # папка выхода
-dist/
+# dist/
 
 # минимизированные файлы
 app/css/style.min.css
