@@ -50,6 +50,7 @@
 
     &__list {
         display: flex;
+        align-items: center;
         justify-content: center;
     }
 
@@ -62,13 +63,44 @@
     &__link {
         @extend %nav-link;
     }
+
+    &__list-item--icons {
+        width: 72px;
+
+        @extend %dfsbc;
+    }
+
+    &__icon-link {
+        margin-top: 5px;
+        outline: none;
+
+        svg path {
+            fill: $text-color-brown-dark;
+        }
+
+        &:not(:last-child) {
+            // margin-right: 16px;
+        }
+
+        &:focus svg path {
+            fill: $text-color-tiffany;
+        }
+
+        &:hover svg path {
+            fill: $text-color-brown-light;
+        }
+
+        &:active svg path {
+            fill: $text-color-tiffany;
+        }
+    }
 }
 
 .assortment {
     background-color: $bg-color-tiffany;
 
     &__title {
-        color: $text-color-tyffany;
+        color: $text-color-tiffany;
 
         @extend %title-h2;
     }
@@ -109,7 +141,7 @@
     background-color: $bg-color-tiffany;
 
     &__title {
-        color: $text-color-tyffany;
+        color: $text-color-tiffany;
 
         @extend %title-h2;
     }
@@ -129,7 +161,7 @@
     background-color: $bg-color-sky;
 
     &__title {
-        color: $text-color-tyffany-moire;
+        color: $text-color-tiffany-moire;
 
         @extend %title-h2;
     }
@@ -139,7 +171,7 @@
     background-color: $bg-color-tiffany;
 
     &__title {
-        color: $text-color-tyffany;
+        color: $text-color-tiffany;
 
         @extend %title-h2;
     }
@@ -159,7 +191,7 @@
 
     &__title {
         margin-bottom: 25px;
-        color: $text-color-tyffany-moire;
+        color: $text-color-tiffany-moire;
 
         @extend %title-h2;
     }
@@ -190,19 +222,19 @@
 
     &__list-item--location {
         &::before {
-            background-image: url(../images/icons/location.svg);
+            background-image: url(../images/icons/contacts/location.svg);
         }
     }
 
     &__list-item--phone {
         &::before {
-            background-image: url(../images/icons/phone.svg);
+            background-image: url(../images/icons/contacts/phone.svg);
         }
     }
 
     &__list-item--clock {
         &::before {
-            background-image: url(../images/icons/clock.svg);
+            background-image: url(../images/icons/contacts/clock.svg);
         }
     }
 

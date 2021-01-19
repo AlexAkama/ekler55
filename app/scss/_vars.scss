@@ -1,8 +1,8 @@
 $text-color-brown-dark: #692508;
 $text-color-brown: #906047;
 $text-color-brown-light: #c79276;
-$text-color-tyffany: #508c81;
-$text-color-tyffany-moire: #537674;
+$text-color-tiffany: #508c81;
+$text-color-tiffany-moire: #537674;
 $text-color-pink-moire: #836b6c;
 $text-color-blackly: #191833;
 $text-color-blackly-tiffany: #364949;
@@ -24,7 +24,7 @@ $bg-color-sky: #f3feff;
     color: $text-color-brown-dark;
 
     &:focus {
-        color: $text-color-tyffany;
+        color: $text-color-tiffany;
     }
 
     &:hover {
@@ -34,7 +34,7 @@ $bg-color-sky: #f3feff;
 
     &:active {
         border-bottom-color: transparent;
-        color: $text-color-tyffany;
+        color: $text-color-tiffany;
     }
 
     @extend %C-600;
@@ -53,7 +53,7 @@ $bg-color-sky: #f3feff;
     background-color: $bg-color-tiffany;
 
     &:focus {
-        border-color: $text-color-tyffany;
+        border-color: $text-color-tiffany;
     }
 
     &:hover {
