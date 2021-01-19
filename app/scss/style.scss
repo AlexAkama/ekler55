@@ -129,8 +129,6 @@
 
 .cakes {
     min-height: auto;
-
-    // background-color: $bg-color-cherry-light;
     background-image: url(../images/bg/cakes-bg.jpg);
 
     &__container {
@@ -161,6 +159,8 @@
     &__link {
         color: inherit;
     }
+
+    @extend %bg-center;
 }
 
 .gallery {
@@ -201,6 +201,8 @@
 
         @extend %F-400;
     }
+
+    @extend %bg-center;
 }
 
 .reviews {
