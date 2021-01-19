@@ -4,6 +4,7 @@ $text-color-brown-light: #c79276;
 $text-color-tiffany: #508c81;
 $text-color-tiffany-moire: #537674;
 $text-color-pink-moire: #836b6c;
+$text-color-violet-moire: #504e61;
 $text-color-blackly: #191833;
 $text-color-blackly-tiffany: #364949;
 
@@ -11,9 +12,7 @@ $text-color-blackly-tiffany: #364949;
 $bg-color-tiffany: #e6fffb;
 $bg-color-tiffany-light: #fbfffe;
 $bg-color-tiffany-dark: #bdfff4;
-$bg-color-cherry-light: #f4efff;
 $bg-color-peach: #fff4ef;
-$bg-color-sky: #f3feff;
 
 // BUTTON & LINK
 %nav-link {
@@ -116,3 +115,8 @@ $bg-color-sky: #f3feff;
     font-family: "Pattaya-Regular", serif;
     font-weight: 400;
 }
+
+// %CF-400 {
+//     font-family: "CityFlowersscriptTwo", serif;
+//     font-weight: 400;
+// }

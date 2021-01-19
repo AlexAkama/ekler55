@@ -128,12 +128,38 @@
 }
 
 .cakes {
-    background-color: $bg-color-cherry-light;
+    min-height: auto;
+
+    // background-color: $bg-color-cherry-light;
+    background-image: url(../images/bg/cakes-bg.jpg);
+
+    &__container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__inner {
+        max-width: 800px;
+    }
 
     &__title {
+        margin-bottom: 60px;
         color: $text-color-pink-moire;
 
         @extend %title-h2;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 30px;
+        line-height: 34px;
+        color: $text-color-violet-moire;
+
+        @extend %F-400;
+    }
+
+    &__link {
+        color: inherit;
     }
 }
 
@@ -158,12 +184,22 @@
 }
 
 .delivery {
-    background-color: $bg-color-sky;
+    min-height: auto;
+    background-image: url(../images/bg/delivery-bg.jpg);
 
     &__title {
+        margin-bottom: 60px;
         color: $text-color-tiffany-moire;
 
         @extend %title-h2;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 36px;
+        line-height: 46px;
+
+        @extend %F-400;
     }
 }
 
