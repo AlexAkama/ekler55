@@ -1,13 +1,19 @@
-// $<имя_переменной>: <значение>
-// %<имя_болока> {...} --> use: @extend <имя_блока>
-
-$text-color-brown-dark: #573828;
+$text-color-brown-dark: #692508;
 $text-color-brown: #906047;
 $text-color-brown-light: #c79276;
-$text-color-tyffany: #40726f;
+$text-color-tyffany: #508c81;
+$text-color-tyffany-moire: #537674;
+$text-color-pink-moire: #836b6c;
+$text-color-blackly: #191833;
+$text-color-blackly-tiffany: #364949;
+
+//
 $bg-color-tiffany: #e6fffb;
 $bg-color-tiffany-light: #fbfffe;
 $bg-color-tiffany-dark: #bdfff4;
+$bg-color-cherry-light: #f4efff;
+$bg-color-peach: #fff4ef;
+$bg-color-sky: #f3feff;
 
 // BUTTON & LINK
 %nav-link {
@@ -68,10 +74,17 @@ $bg-color-tiffany-dark: #bdfff4;
     justify-content: space-between;
 }
 
+%dfcc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 // TEXT
 %title-h2 {
     font-size: 55px;
     line-height: 76px;
+    text-align: center;
 
     @extend %P-400;
 }
