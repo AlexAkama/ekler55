@@ -11,7 +11,7 @@
     background-image: url(../images/bg/home-bg.jpg);
 
     &__wrapper {
-        height: 600px;
+        height: 500px;
 
         @extend %dfsbc;
     }
@@ -157,7 +157,7 @@
     }
 
     &__link {
-        color: inherit;
+        @extend %phone;
     }
 
     @extend %bg-center;
@@ -274,6 +274,10 @@
         &::before {
             background-image: url(../images/icons/contacts/clock.svg);
         }
+    }
+
+    &__link {
+        @extend %phone;
     }
 
     @extend %bg-center;
