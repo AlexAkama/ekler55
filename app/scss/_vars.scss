@@ -82,10 +82,26 @@ $bg-color-peach: #fff4ef;
 // TEXT
 %title-h2 {
     font-size: 55px;
-    line-height: 76px;
+    line-height: 60px;
     text-align: center;
 
+    span {
+        font-size: 70px;
+
+        @extend %CF-400;
+    }
+
     @extend %P-400;
+}
+
+%phone {
+    outline: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
 }
 
 // BACKGROUND
@@ -116,7 +132,7 @@ $bg-color-peach: #fff4ef;
     font-weight: 400;
 }
 
-// %CF-400 {
-//     font-family: "CityFlowersscriptTwo", serif;
-//     font-weight: 400;
-// }
+%CF-400 {
+    font-family: "CityFlowersscriptTwo", serif;
+    font-weight: 400;
+}
