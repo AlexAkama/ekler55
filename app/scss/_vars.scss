@@ -14,6 +14,23 @@ $bg-color-tiffany-light: #fbfffe;
 $bg-color-tiffany-dark: #bdfff4;
 $bg-color-peach: #fff4ef;
 
+//
+$accent-color: #fdd892;
+
+// DECOR
+%decor-before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 135px;
+    background-image: url(../images/decor/decor-border.svg);
+
+    @extend %bg-center;
+}
+
 // BUTTON & LINK
 %nav-link {
     outline: none;
@@ -66,6 +83,19 @@ $bg-color-peach: #fff4ef;
     @extend %F-400;
 }
 
+%clear-btn {
+    border: 2px solid transparent;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 // DISPLAY
 %dfsbc {
     display: flex;
@@ -111,7 +141,7 @@ $bg-color-peach: #fff4ef;
     background-repeat: no-repeat;
 }
 
-// fonts
+// FONTS
 %C-600 {
     font-family: "Cormorant-Bold", serif;
     font-weight: 600;

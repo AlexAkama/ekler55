@@ -164,12 +164,125 @@
 }
 
 .gallery {
+    position: relative;
+    padding: 135px 0 180px;
+    background-image: url(../images/decor/lily-pattern.svg);
+    background-position: 0 0;
     background-color: $bg-color-tiffany;
 
+    &::before {
+        background-color: $bg-color-tiffany;
+
+        @extend %decor-before;
+    }
+
     &__title {
+        margin-bottom: 80px;
+        padding-top: 65px;
         color: $text-color-tiffany;
 
         @extend %title-h2;
+    }
+
+    &__img {
+        margin: 30px 15px;
+        outline: none;
+        border: 2px solid transparent;
+        border-radius: 40px;
+        width: 370px;
+        height: 370px;
+
+        // box-shadow: 6px 12px 15px #8ebab2;
+        box-shadow: 6px 10px 10px #8ebab2;
+        object-fit: cover;
+
+        &:focus {
+            border-color: $text-color-tiffany;
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        button {
+            outline: none;
+            border: 2px solid $text-color-tiffany;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 0;
+            background-color: rgba(255, 255, 255, 0.4);
+            transition: all 0.3s;
+            cursor: pointer;
+
+            &:focus {
+                border-color: #fdd892;
+            }
+
+            &:hover {
+                background-color: $text-color-tiffany-moire;
+            }
+
+            &:active {
+                border-color: $text-color-tiffany-moire;
+            }
+        }
+    }
+
+    .slick-active {
+        button {
+            background-color: $text-color-tiffany;
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        font-size: 0;
+        transform: translateY(-50%);
+
+        &:focus {
+            border-color: #fdd892;
+        }
+
+        @extend %clear-btn;
+        @extend %bg-center;
+    }
+
+    .slick-prev {
+        left: -70px;
+        background-image: url(../images/icons/arrows/button-left.svg);
+
+        &:hover {
+            background-image: url(../images/icons/arrows/button-left-hover.svg);
+        }
+
+        &:active {
+            background-image: url(../images/icons/arrows/button-left-active.svg);
+        }
+    }
+
+    .slick-next {
+        right: -70px;
+        background-image: url(../images/icons/arrows/button-right.svg);
+
+        &:hover {
+            background-image: url(../images/icons/arrows/button-right-hover.svg);
+        }
+
+        &:active {
+            background-image: url(../images/icons/arrows/button-right-active.svg);
+        }
     }
 }
 
@@ -181,17 +294,9 @@
     background-color: $bg-color-peach;
 
     &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        display: block;
-        height: 135px;
-        background-image: url(../images/decor/decor-border.svg);
         background-color: $bg-color-peach;
 
-        @extend %bg-center;
+        @extend %decor-before;
     }
 
     &__title {
