@@ -8,7 +8,7 @@
 
 .home {
     padding: 20px 0 0;
-    background-image: url(../images/bg/home-bg.jpg);
+    background-image: url(../images/main/bg/home-bg.jpg);
 
     &__wrapper {
         height: 500px;
@@ -42,7 +42,7 @@
         display: block;
         width: 100%;
         height: 50px;
-        background-image: url(../images/line-art-brown.png);
+        background-image: url(../images/main/decor/line-art-brown.png);
         background-size: contain;
 
         @extend %bg-center;
@@ -106,30 +106,104 @@
     }
 
     &__filter {
+        text-align: center;
+
         &::after {
             content: "";
             display: block;
             width: 100%;
             height: 50px;
-            background-image: url(../images/line-art-tiffany.png);
+            background-image: url(../images/main/decor/line-art-tiffany.png);
             background-size: contain;
 
             @extend %bg-center;
         }
     }
+
+    &__filter-btn {
+        font-size: 30px;
+        line-height: 34px;
+        color: $text-color-blackly;
+
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
+
+        &:focus {
+            color: $text-color-pink;
+        }
+
+        &:hover {
+            border-bottom-color: $text-color-pink-light;
+            color: $text-color-pink-light;
+        }
+
+        &:active {
+            border-bottom-color: $text-color-pink;
+            color: $text-color-pink;
+        }
+
+        @extend %clear-btn;
+        @extend %F-400;
+    }
+
+    &__filter-btn--active {
+        border-bottom-color: $text-color-pink;
+        color: $text-color-pink;
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        visibility: visible;
+        transition: all 0.3s;
+    }
+
+    &__card {
+        margin: 45px 0;
+        background-color: #fff;
+    }
 }
 
-.assortment-filter {
-    text-align: center;
+.card {
+    overflow: hidden;
+    border-radius: 40px;
+    min-height: 670px;
+    max-width: 370px;
+    box-shadow: 0 4px 20px 2px #86a9a6;
 
-    &__inner {
-        display: inline-block;
+    &__img {}
+
+    &__text-box {
+        padding: 23px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-size: 30px;
+        line-height: 34px;
+        text-align: center;
+
+        @extend %F-400;
+    }
+
+    &__discription {
+        font-size: 18px;
+        line-height: 24px;
+
+        @extend %N-400;
+    }
+
+    &__price {
+        font-size: 30px;
+        line-height: 34px;
     }
 }
 
 .cakes {
     min-height: auto;
-    background-image: url(../images/bg/cakes-bg.jpg);
+    background-image: url(../images/main/bg/cakes-bg.jpg);
 
     &__container {
         display: flex;
@@ -166,7 +240,7 @@
 .gallery {
     position: relative;
     padding: 135px 0 180px;
-    background-image: url(../images/decor/lily-pattern.svg);
+    background-image: url(../images/main/decor/lily-pattern.svg);
     background-position: 0 0;
     background-color: $bg-color-tiffany;
 
@@ -191,8 +265,6 @@
         border-radius: 40px;
         width: 370px;
         height: 370px;
-
-        // box-shadow: 6px 12px 15px #8ebab2;
         box-shadow: 6px 10px 10px #8ebab2;
         object-fit: cover;
 
@@ -245,51 +317,31 @@
         position: absolute;
         top: 50%;
         z-index: 1;
-        border-radius: 50%;
         width: 70px;
         height: 70px;
-        font-size: 0;
         transform: translateY(-50%);
 
-        &:focus {
-            border-color: #fdd892;
-        }
-
-        @extend %clear-btn;
-        @extend %bg-center;
+        @extend %slick-arrow;
     }
 
     .slick-prev {
         left: -70px;
-        background-image: url(../images/icons/arrows/button-left.svg);
 
-        &:hover {
-            background-image: url(../images/icons/arrows/button-left-hover.svg);
-        }
-
-        &:active {
-            background-image: url(../images/icons/arrows/button-left-active.svg);
-        }
+        @extend %slick-prev;
     }
 
     .slick-next {
         right: -70px;
         background-image: url(../images/icons/arrows/button-right.svg);
 
-        &:hover {
-            background-image: url(../images/icons/arrows/button-right-hover.svg);
-        }
-
-        &:active {
-            background-image: url(../images/icons/arrows/button-right-active.svg);
-        }
+        @extend %slick-next;
     }
 }
 
 .offers {
     position: relative;
     padding: 135px 0 180px;
-    background-image: url(../images/decor/lily-pattern.svg);
+    background-image: url(../images/main/decor/lily-pattern.svg);
     background-position: 0 0;
     background-color: $bg-color-peach;
 
@@ -354,7 +406,7 @@
 
 .delivery {
     min-height: auto;
-    background-image: url(../images/bg/delivery-bg.jpg);
+    background-image: url(../images/main/bg/delivery-bg.jpg);
 
     &__title {
         margin-bottom: 60px;
@@ -375,18 +427,178 @@
 }
 
 .reviews {
+    position: relative;
+    padding: 135px 0 180px;
+    background-image: url(../images/main/decor/lily-pattern.svg);
+    background-position: 0 0;
     background-color: $bg-color-tiffany;
 
+    &::before {
+        background-color: $bg-color-tiffany;
+
+        @extend %decor-before;
+    }
+
     &__title {
+        margin-bottom: 50px;
+        padding-top: 65px;
         color: $text-color-tiffany;
 
         @extend %title-h2;
+    }
+
+    &__slider-box {
+        display: flex;
+        align-items: center;
+    }
+
+    &__view {
+        position: relative;
+        margin-right: 50px;
+        max-width: 760px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            display: block;
+            width: 2px;
+            height: 560px;
+            background-color: $text-color-tiffany;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__view-item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__view-wrapper {
+        display: flex;
+    }
+
+    &__view-img {
+        margin-right: 30px;
+        border-radius: 25px;
+        width: 370px;
+        height: 370px;
+        box-shadow: 0 6px 13px #66a2a9;
+    }
+
+    &__view-text-box {
+        color: $text-color-blackly-tiffany;
+    }
+
+    &__view-name {
+        font-size: 45px;
+        line-height: 50px;
+
+        @extend %F-400;
+    }
+
+    &__view-text {
+        font-size: 26px;
+        line-height: 36px;
+
+        @extend %N-400;
+    }
+
+    &__nav {
+        .slick-dots {
+            position: absolute;
+            display: flex;
+            transform: translateY(-100%);
+
+            li {
+                display: none;
+            }
+        }
+
+        li.slick-active {
+            display: block;
+
+            button {
+                position: absolute;
+                left: -212px;
+                width: 56px;
+                height: 56px;
+                font-size: 42px;
+                color: $text-color-blackly-tiffany;
+                transform: translateY(-100%);
+
+                @extend %F-400;
+                @extend %clear-btn;
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            bottom: 0;
+            width: 56px;
+            height: 56px;
+
+            @extend %slick-arrow;
+        }
+
+        .slick-prev {
+            left: -268px;
+
+            @extend %slick-prev;
+        }
+
+        .slick-next {
+            left: -156px;
+
+            @extend %slick-next;
+        }
+
+        .slick-list {
+            height: 530px !important;
+        }
+    }
+
+    &__nav-item-inner {
+        display: flex;
+    }
+
+    &__nav-item {
+        margin-bottom: 35px;
+    }
+
+    &__nav-img {
+        display: inline-block;
+        margin-right: 20px;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    &__nav-text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 235px;
+        white-space: nowrap;
+
+        @extend %F-400;
+    }
+
+    &__nav-name {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    &__nav-insta {
+        font-size: 24px;
+        line-height: 26px;
     }
 }
 
 .contacts {
     height: 100vh;
-    background-image: url(../images/bg/contacts-bg.jpg);
+    background-image: url(../images/main/bg/contacts-bg.jpg);
 
     &__wrapper {
         border-radius: 80px;

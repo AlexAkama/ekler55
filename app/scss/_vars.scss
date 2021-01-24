@@ -3,6 +3,8 @@ $text-color-brown: #906047;
 $text-color-brown-light: #c79276;
 $text-color-tiffany: #508c81;
 $text-color-tiffany-moire: #537674;
+$text-color-pink: #e58e9e;
+$text-color-pink-light: #ffd8df;
 $text-color-pink-moire: #836b6c;
 $text-color-violet-moire: #504e61;
 $text-color-blackly: #191833;
@@ -26,12 +28,47 @@ $accent-color: #fdd892;
     top: 0;
     display: block;
     height: 135px;
-    background-image: url(../images/decor/decor-border.svg);
 
     @extend %bg-center;
 }
 
 // BUTTON & LINK
+%slick-arrow {
+    border-radius: 50%;
+    font-size: 0 !important;
+
+    &:focus {
+        border-color: #fdd892;
+    }
+
+    @extend %clear-btn;
+    @extend %bg-center;
+}
+
+%slick-prev {
+    background-image: url(../images/icons/arrows/button-left.svg);
+
+    &:hover {
+        background-image: url(../images/icons/arrows/button-left-hover.svg);
+    }
+
+    &:active {
+        background-image: url(../images/icons/arrows/button-left-active.svg);
+    }
+}
+
+%slick-next {
+    background-image: url(../images/icons/arrows/button-right.svg);
+
+    &:hover {
+        background-image: url(../images/icons/arrows/button-right-hover.svg);
+    }
+
+    &:active {
+        background-image: url(../images/icons/arrows/button-right-active.svg);
+    }
+}
+
 %nav-link {
     outline: none;
     border-bottom: 1px solid transparent;

@@ -5,7 +5,7 @@ const {
     parallel,
     series
 } = require('gulp'),
-    scss = require('gulp-sass'),
+    mincss = require('gulp-sass'),
     concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
@@ -16,12 +16,12 @@ const {
 
 function styles() {
     return src('app/scss/style.scss')
-        .pipe(scss({
+        .pipe(mincss({
+            // outputStyle:
             //expanded - полный формат как плагин
             //nested - отступы также как в scss
             //compact - классы в одну строку
             //compressed - конвертация в одну строку (min)
-            outputStyle: 'compressed'
         }))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
@@ -86,7 +86,8 @@ function build() {
             'app/**/*.html',
             'app/css/style.min.css',
             'app/js/main.min.js',
-            'app/fonts/*.woff*'
+            'app/fonts/*.woff*',
+            'app/data/*.*'
         ], {
             base: 'app' // переносить с учетом структуры папок осносительно указанного
         })
