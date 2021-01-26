@@ -117,6 +117,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 case 'торт':
                     cakesBox.appendChild(item);
                     break;
+                case 'эклер':
+                    eclairsBox.appendChild(item);
+                    break;
             }
         }
     }
