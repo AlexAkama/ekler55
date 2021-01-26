@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             title.textContent = products[i].name;
             discr.textContent = products[i].description;
-            price.textContent = products[i].price + " ₽ / кг";
+            price.textContent = products[i].price + " ₽ / " + products[i].unit;
 
             item.appendChild(image);
             box.appendChild(title);
@@ -119,6 +119,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     break;
                 case 'эклер':
                     eclairsBox.appendChild(item);
+                    break;
+                case 'выпечка':
+                    bakeryBox.appendChild(item);
                     break;
             }
         }
