@@ -428,6 +428,7 @@ section {
 .card {
   overflow: hidden;
   border-radius: 40px;
+  width: 100%;
   min-height: 670px;
   max-width: 370px;
   -webkit-box-shadow: 0 4px 20px 2px #86a9a6;
