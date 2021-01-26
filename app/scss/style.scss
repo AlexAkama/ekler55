@@ -97,9 +97,20 @@
 }
 
 .assortment {
+    position: relative;
+    padding: 135px 0;
+    background-image: url(../images/main/decor/lily-pattern.svg);
     background-color: $bg-color-tiffany;
 
+    &::before {
+        background-image: url(../images/main/decor/art1.svg);
+        background-color: $bg-color-tiffany;
+
+        @extend %decor-before;
+    }
+
     &__title {
+        padding-top: 65px;
         color: $text-color-tiffany;
 
         @extend %title-h2;
@@ -198,6 +209,8 @@
     &__price {
         font-size: 30px;
         line-height: 34px;
+
+        @extend %PT-400;
     }
 }
 
@@ -239,12 +252,13 @@
 
 .gallery {
     position: relative;
-    padding: 135px 0 180px;
+    padding: 135px 0;
     background-image: url(../images/main/decor/lily-pattern.svg);
     background-position: 0 0;
     background-color: $bg-color-tiffany;
 
     &::before {
+        background-image: url(../images/main/decor/art2.svg);
         background-color: $bg-color-tiffany;
 
         @extend %decor-before;
@@ -346,6 +360,7 @@
     background-color: $bg-color-peach;
 
     &::before {
+        background-image: url(../images/main/decor/art3.svg);
         background-color: $bg-color-peach;
 
         @extend %decor-before;
@@ -434,6 +449,7 @@
     background-color: $bg-color-tiffany;
 
     &::before {
+        background-image: url(../images/main/decor/art4.svg);
         background-color: $bg-color-tiffany;
 
         @extend %decor-before;

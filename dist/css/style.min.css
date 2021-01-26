@@ -1,4 +1,4 @@
-.gallery::before, .offers::before, .reviews::before {
+.assortment::before, .gallery::before, .offers::before, .reviews::before {
   content: "";
   position: absolute;
   left: 0;
@@ -106,7 +106,7 @@
   .cakes__link:hover, .contacts__link:hover, .cakes__link:focus, .contacts__link:focus {
     text-decoration: underline; }
 
-.gallery::before, .offers::before, .reviews::before, .gallery .slick-arrow, .reviews__nav .slick-arrow, .home, .nav::after, .assortment__filter::after, .cakes, .delivery, .contacts {
+.gallery .slick-arrow, .reviews__nav .slick-arrow, .home, .nav::after, .assortment__filter::after, .cakes, .delivery, .contacts {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -115,7 +115,7 @@
   font-family: "Cormorant-Bold", serif;
   font-weight: 600; }
 
-.order-btn, .assortment__filter-btn, .card__title, .cakes__text, .offer__text, .delivery__text, .reviews__view-name, .reviews__nav li.slick-active button, .reviews__nav-text-box, .contacts__list-item {
+.order-btn, .assortment__filter-btn, .card__title, .cakes__text, .offer__text, .delivery__text, .reviews__view-name, .reviews__nav-text-box, .contacts__list-item {
   font-family: "Forum-Regular", serif;
   font-weight: 400; }
 
@@ -129,6 +129,10 @@
 
 .home__title span, .assortment__title span, .cakes__title span, .gallery__title span, .offers__title span, .delivery__title span, .reviews__title span, .contacts__title span {
   font-family: "CityFlowersscriptTwo", serif;
+  font-weight: 400; }
+
+.card__price, .reviews__nav li.slick-active button {
+  font-family: "PTSerif-Regular", serif;
   font-weight: 400; }
 
 @font-face {
@@ -162,6 +166,13 @@
 @font-face {
   src: local("CityFlowersscriptTwo"), url(../fonts/CityFlowersscriptTwo.woff2) format("woff2"), url(../fonts/CityFlowersscriptTwo.woff) format("woff");
   font-family: "CityFlowersscriptTwo";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  src: local("PTSerif-Regular"), url(../fonts/PTSerif-Regular.woff2) format("woff2"), url(../fonts/PTSerif-Regular.woff) format("woff");
+  font-family: "PTSerif-Regular";
   font-weight: 400;
   font-style: normal;
   font-display: swap; }
@@ -361,8 +372,15 @@ section {
     fill: #508c81; }
 
 .assortment {
+  position: relative;
+  padding: 135px 0;
+  background-image: url(../images/main/decor/lily-pattern.svg);
   background-color: #e6fffb; }
+  .assortment::before {
+    background-image: url(../images/main/decor/art1.svg);
+    background-color: #e6fffb; }
   .assortment__title {
+    padding-top: 65px;
     color: #508c81; }
   .assortment__filter {
     text-align: center; }
@@ -451,11 +469,12 @@ section {
 
 .gallery {
   position: relative;
-  padding: 135px 0 180px;
+  padding: 135px 0;
   background-image: url(../images/main/decor/lily-pattern.svg);
   background-position: 0 0;
   background-color: #e6fffb; }
   .gallery::before {
+    background-image: url(../images/main/decor/art2.svg);
     background-color: #e6fffb; }
   .gallery__title {
     margin-bottom: 80px;
@@ -528,6 +547,7 @@ section {
   background-position: 0 0;
   background-color: #fff4ef; }
   .offers::before {
+    background-image: url(../images/main/decor/art3.svg);
     background-color: #fff4ef; }
   .offers__title {
     margin-bottom: 50px;
@@ -588,6 +608,7 @@ section {
   background-position: 0 0;
   background-color: #e6fffb; }
   .reviews::before {
+    background-image: url(../images/main/decor/art4.svg);
     background-color: #e6fffb; }
   .reviews__title {
     margin-bottom: 50px;

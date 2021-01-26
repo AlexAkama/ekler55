@@ -63,6 +63,18 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function createGalleryItems() {
+        let galleryBox = document.querySelector('.gallery__slider');
+        for (let i = 0; i < gallery.length; i++) {
+            let image = document.createElement('img');
+            image.classList.add('gallery__img');
+            image.setAttribute('alt', 'gallery image');
+            image.setAttribute('src', 'images/content/gallery/' + gallery[i]);
+            galleryBox.appendChild(image);
+        }
+
+    }
+
     function createProductItems() {
         let cakesBox = document.querySelector('.assortment__box--cakes'),
             pastriesBox = document.querySelector('.assortment__box--pastries'),
@@ -92,7 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             title.textContent = products[i].name;
             discr.textContent = products[i].description;
-            price.textContent = products[i].price;
+            price.textContent = products[i].price + " ₽ / кг";
 
             item.appendChild(image);
             box.appendChild(title);
@@ -107,18 +119,6 @@ window.addEventListener('DOMContentLoaded', function() {
                     break;
             }
         }
-    }
-
-    function createGalleryItems() {
-        let galleryBox = document.querySelector('.gallery__slider');
-        for (let i = 0; i < gallery.length; i++) {
-            let image = document.createElement('img');
-            image.classList.add('gallery__img');
-            image.setAttribute('alt', 'gallery image');
-            image.setAttribute('src', 'images/content/gallery/' + gallery[i]);
-            galleryBox.appendChild(image);
-        }
-
     }
 
     createGalleryItems();
@@ -186,7 +186,7 @@ var callback =
         });
 
         // Плавный скролл
-        $('.nav__link').on('click', function(event) {
+        $('.nav__link, .order-btn').on('click', function(event) {
             event.preventDefault();
             var id = $(this).attr('href');
             var element = $(id).offset().top;
