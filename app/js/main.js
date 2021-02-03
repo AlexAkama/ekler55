@@ -85,32 +85,42 @@ window.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < products.length; i++) {
             let item = document.createElement('div'),
                 image = document.createElement('img'),
-                box = document.createElement('div'),
+                text = document.createElement('div'),
                 title = document.createElement('h4'),
                 discr = document.createElement('p'),
-                price = document.createElement('p');
+                price = document.createElement('p'),
+                input = document.createElement('input'),
+                btn = document.createElement('button');
 
             item.classList.add('assortment__card');
             item.classList.add('card');
             image.classList.add('card__img');
-            box.classList.add('card__text-box');
+            text.classList.add('card__text-box');
             title.classList.add('card__title');
             discr.classList.add('card__discription');
             price.classList.add('card__price');
+            input.classList.add('card__input');
+            btn.classList.add('card__button')
 
             image.setAttribute('alt', 'product image');
             image.setAttribute('src', 'images/content/products/' + products[i].image);
             image.setAttribute('loading', 'lazy');
+            input.setAttribute("value", 1);
+            input.setAttribute("min", 1);
+            input.setAttribute("max", 99);
 
             title.textContent = products[i].name;
             discr.textContent = products[i].description;
             price.textContent = products[i].price + " ₽ / " + products[i].unit;
+            btn.textContent = "Добавить в корзину"
 
             item.appendChild(image);
-            box.appendChild(title);
-            box.appendChild(discr);
-            box.appendChild(price);
-            item.appendChild(box);
+            text.appendChild(title);
+            text.appendChild(discr);
+            text.appendChild(price);
+            text.appendChild(input);
+            text.appendChild(btn);
+            item.appendChild(text);
 
             let type = products[i].type;
             switch (type) {
@@ -131,11 +141,11 @@ window.addEventListener('DOMContentLoaded', function() {
     createProductItems();
     createReviewItems();
 
-    callback();
+    main();
 })
 
-var callback =
-    $(function() {
+var main =
+    function() {
 
         const tabsContent = document.querySelectorAll('.assortment__box');
         tabsContent.forEach(element => {
@@ -200,4 +210,20 @@ var callback =
                 scrollTop: element
             }, 500);
         });
-    });
+
+        // Кнопка наверх
+        $(window).on('scroll', function() {
+            if ($(this).scrollTop() > $('#cakes').offset().top - 200) {
+                $('.top-btn').fadeIn();
+            } else {
+                $('.top-btn').fadeOut();
+            }
+        });
+
+        $('.top-btn').on('click', function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    };
