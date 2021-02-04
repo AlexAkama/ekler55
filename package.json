@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "open": "start chrome.exe dist/index.html",
+    "open": "start dist/index.html",
+    "github": "start https://github.com/AlexAkama/ekler55",
     "presentation": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "stylelint": "stylelint '**/*{.css,.scss}'",
@@ -25,6 +26,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.5.1",
+    "jquery-form-styler": "^2.0.2",
     "prettier": "^2.1.2",
     "slick-carousel": "^1.8.1",
     "stylelint": "^13.7.2",

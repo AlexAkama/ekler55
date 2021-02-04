@@ -132,6 +132,31 @@ $accent-color: #fdd892;
     }
 }
 
+%colors-action-btn {
+    border-color: #f5ced5;
+    background-color: $text-color-pink-light;
+
+    &:hover {
+        box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+        background-color: #feedf0;
+    }
+
+    &:active {
+        border-color: $text-color-pink-light;
+        background-color: #ffacbb;
+    }
+}
+
+%colors-input-btn {
+    &:hover {
+        background-color: $text-color-pink-light;
+    }
+
+    &:active {
+        background-color: #ffacbb;
+    }
+}
+
 // DISPLAY
 %dfsbc {
     display: flex;

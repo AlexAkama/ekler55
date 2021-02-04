@@ -85,9 +85,12 @@ window.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < products.length; i++) {
             let item = document.createElement('div'),
                 image = document.createElement('img'),
+                box = document.createElement('div'),
                 text = document.createElement('div'),
                 title = document.createElement('h4'),
                 discr = document.createElement('p'),
+                cart = document.createElement('div'),
+                select = document.createElement('div'),
                 price = document.createElement('p'),
                 input = document.createElement('input'),
                 btn = document.createElement('button');
@@ -95,7 +98,11 @@ window.addEventListener('DOMContentLoaded', function() {
             item.classList.add('assortment__card');
             item.classList.add('card');
             image.classList.add('card__img');
+            box.classList.add('card__box');
             text.classList.add('card__text-box');
+            cart.classList.add('card__to-cart');
+            select.classList.add('card__select');
+
             title.classList.add('card__title');
             discr.classList.add('card__discription');
             price.classList.add('card__price');
@@ -105,6 +112,7 @@ window.addEventListener('DOMContentLoaded', function() {
             image.setAttribute('alt', 'product image');
             image.setAttribute('src', 'images/content/products/' + products[i].image);
             image.setAttribute('loading', 'lazy');
+            input.setAttribute("type", "number");
             input.setAttribute("value", 1);
             input.setAttribute("min", 1);
             input.setAttribute("max", 99);
@@ -117,10 +125,13 @@ window.addEventListener('DOMContentLoaded', function() {
             item.appendChild(image);
             text.appendChild(title);
             text.appendChild(discr);
-            text.appendChild(price);
-            text.appendChild(input);
-            text.appendChild(btn);
-            item.appendChild(text);
+            box.appendChild(text);
+            select.appendChild(price);
+            select.appendChild(input);
+            cart.appendChild(select);
+            cart.appendChild(btn);
+            box.appendChild(cart);
+            item.appendChild(box);
 
             let type = products[i].type;
             switch (type) {
@@ -147,6 +158,7 @@ window.addEventListener('DOMContentLoaded', function() {
 var main =
     function() {
 
+        // Табы в ассортименте
         const tabsContent = document.querySelectorAll('.assortment__box');
         tabsContent.forEach(element => {
             $(element).addClass('hide');
@@ -170,9 +182,13 @@ var main =
                 targetContent.removeClass('invisible');
                 targetContent.addClass('assortment__box--active');
             }, 300);
-
         });
 
+
+        // Стилизация инпута
+        $('.card__input').styler();
+
+        // SlickSlider
         $('.reviews__view').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -186,7 +202,6 @@ var main =
             slidesToScroll: 1,
             asNavFor: '.reviews__view',
             dots: true,
-            // centerMode: true,
             focusOnSelect: true
         });
 
