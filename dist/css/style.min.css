@@ -1233,7 +1233,7 @@ section {
         -ms-flex-pack: center;
             justify-content: center; }
     .gallery .slick-dots li:not(:last-child) {
-      margin-right: 30px; }
+      margin-right: 15px; }
     .gallery .slick-dots button {
       outline: none;
       border: 2px solid #508c81;
