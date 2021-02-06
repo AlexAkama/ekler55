@@ -8,11 +8,15 @@ body {
     }
 }
 
+.fixed {
+    overflow: hidden;
+}
+
 // FOCUS-VISIBLE
 // скрываем фокусные стили, если используется не клавиатура
-.js-focus-visible button:focus:not(.focus-visible) {
-    border-color: transparent;
-}
+// .js-focus-visible button:focus:not(.focus-visible) {
+//     border-color: transparent;
+// }
 
 section {
     padding: 100px 0;

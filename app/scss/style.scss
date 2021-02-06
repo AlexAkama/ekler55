@@ -242,65 +242,95 @@
         @extend %clear-btn;
         @extend %colors-action-btn;
     }
+
+    .jq-number {
+        padding: 0 $spin-size;
+
+        &__field {
+            width: $spin-size;
+            height: $spin-size;
+
+            input {
+                font-size: $spin-text-size;
+                line-height: $spin-size;
+            }
+        }
+
+        &__spin {
+            width: $spin-size;
+            height: $spin-size;
+        }
+    }
 }
 
-// весь стилизованный инпут
+// стилизованный инпут глобально
 .jq-number {
-    padding: 0 45px;
 
     // поле ввода
     &__field {
         border: none;
-        width: 40px;
         box-shadow: none;
 
         input {
             padding: 0;
-            height: 40px;
             font-family: "PTSerif-Regular", serif;
-            font-size: 30px;
             text-align: center;
         }
     }
 
     // кнопки
-    .card__input &__spin {
-        top: 0;
+    &__spin {
         border: 1px solid #000;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        height: 100%;
         box-shadow: none;
         background: transparent;
 
         &::after {
-            left: -1px;
-            top: 0;
-            border: none;
-            width: 40px;
-            height: 40px;
-            font-size: 40px;
-            line-height: 40px;
+            left: 0;
+            width: 65%;
+            height: 2px;
             text-align: center;
             text-shadow: none;
+            background: #000;
         }
 
         // кнопка минус
         &.minus {
             left: 0;
+            top: 0;
 
             &::after {
-                content: "–";
-                transform: translateY(-3px);
+                content: "";
+                left: 50%;
+                top: 50%;
+                border: none;
+                transform: translate(-50%, -50%);
             }
         }
 
         // кнопка плюс
         &.plus {
-            right: -5px;
+            right: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                display: block;
+                width: 2px;
+                height: 65%;
+                background: #000;
+                transform: translate(-50%, -50%);
+            }
 
             &::after {
-                content: "+";
+                content: "";
+                left: 50%;
+                top: 50%;
+                border: none;
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -773,6 +803,71 @@
 
     @extend %bg-center;
     @extend %dfcc;
+}
+
+.cart {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #0009;
+
+    &__wrapper {
+        display: none;
+    }
+
+    &__inner {
+        border: 1px solid $text-color-brown;
+        border-radius: 22px;
+        padding: 60px 20px 15px;
+        min-width: 310px;
+        font-size: 18px;
+        line-height: 24px;
+        background: #f8fffe;
+
+        p {
+            display: inline-block;
+        }
+    }
+
+    &__submit {
+        @extend %clear-btn;
+        @extend %cart-order-btn;
+    }
+
+    @extend %dfcc;
+    @extend %PT-400;
+}
+
+.row {
+    .jq-number {
+        padding: 0 $spin-size-medium;
+
+        &__field {
+            width: $spin-size-medium;
+            height: $spin-size-medium;
+
+            input {
+                font-size: $spin-text-size-medium;
+                line-height: $spin-size-medium;
+            }
+        }
+
+        &__spin {
+            width: $spin-size-medium;
+            height: $spin-size-medium;
+        }
+    }
+
+    &__delete-btn {
+        width: 15px;
+        height: 15px;
+        background-image: url(../images/icons/main/delete.svg);
+
+        @extend %bg-center;
+        @extend %clear-btn;
+    }
 }
 
 // -------------------------------------

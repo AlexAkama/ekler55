@@ -19,6 +19,14 @@ $bg-color-peach: #fff4ef;
 //
 $accent-color: #fdd892;
 
+//
+$spin-size: 40px;
+$spin-text-size: 30px;
+$spin-size-medium: 30px;
+$spin-text-size-medium: 24px;
+$spin-size-small: 20px;
+$spin-text-size-small: 16px;
+
 // DECOR
 %decor-before {
     content: "";
@@ -92,15 +100,47 @@ $accent-color: #fdd892;
     @extend %C-600;
 }
 
+%clear-btn {
+    border: 2px solid transparent;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 %order-btn {
     outline: none;
-    border: 2px solid $text-color-brown;
     border-radius: 38px;
     width: 370px;
     height: 78px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 30px;
     line-height: 33px;
+
+    @extend %colors-order-btn;
+    @extend %F-400;
+}
+
+%cart-order-btn {
+    outline: none;
+    border-radius: 38px;
+    width: 190px;
+    height: 40px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    line-height: 22px;
+
+    @extend %colors-order-btn;
+    @extend %F-400;
+}
+
+%colors-order-btn {
+    border: 2px solid $text-color-brown;
     color: $text-color-brown;
     background-color: $bg-color-tiffany;
 
@@ -115,26 +155,15 @@ $accent-color: #fdd892;
     &:active {
         background-color: $bg-color-tiffany-dark;
     }
-
-    @extend %F-400;
-}
-
-%clear-btn {
-    border: 2px solid transparent;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
-
-    &:focus {
-        outline: none;
-    }
 }
 
 %colors-action-btn {
     border-color: #f5ced5;
     background-color: $text-color-pink-light;
+
+    &:focus {
+        border-color: $text-color-tiffany;
+    }
 
     &:hover {
         box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));

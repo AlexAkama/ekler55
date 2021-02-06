@@ -184,9 +184,8 @@ var main =
             }, 300);
         });
 
-
         // Стилизация инпута
-        $('.card__input').styler();
+        $('.card__input, .row__input').styler();
 
         // SlickSlider
         $('.reviews__view').slick({
@@ -241,4 +240,20 @@ var main =
             }, 500);
             return false;
         });
+
+        $('.to-cart').on('click', function() {
+            $('.cart__wrapper').fadeIn();
+            $('body').addClass('fixed');
+        });
+
+        // $('.cart').on('click', function() {
+        //     $('.cart__wrapper').fadeOut();
+        //     $('body').removeClass('fixed');
+
+        // });
+
+        $('.row__delete-btn').on('click', function(event) {
+            event.target.parentElement.remove();
+        });
+
     };

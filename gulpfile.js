@@ -5,23 +5,23 @@ const {
     parallel,
     series
 } = require('gulp'),
-    mincss = require('gulp-sass'),
     concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
+    sass = require('gulp-sass'),
     del = require('del'),
-
     browserSync = require('browser-sync').create();
 
 function styles() {
     return src('app/scss/style.scss')
-        .pipe(mincss({
-            // outputStyle:
-            //expanded - полный формат как плагин
-            //nested - отступы также как в scss
-            //compact - классы в одну строку
-            //compressed - конвертация в одну строку (min)
+        // outputStyle:
+        //expanded - полный формат как плагин
+        //nested - отступы также как в scss
+        //compact - классы в одну строку
+        //compressed - конвертация в одну строку (min)
+        .pipe(sass({
+            outputStyle: 'expanded',
         }))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
