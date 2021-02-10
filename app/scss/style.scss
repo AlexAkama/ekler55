@@ -820,7 +820,7 @@
     &__inner {
         border: 1px solid $text-color-brown;
         border-radius: 22px;
-        padding: 60px 20px 15px;
+        padding: 30px 20px 15px;
         min-width: 310px;
         font-size: 18px;
         line-height: 24px;
@@ -831,7 +831,32 @@
         }
     }
 
+    &__row-box {
+        margin-bottom: 30px;
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__total-row {
+        margin-bottom: 30px;
+    }
+
+    &__total-text {
+        min-width: 320px;
+    }
+
+    &__total-row {
+        font-size: 24px;
+    }
+
     &__submit {
+        display: block;
+        margin: 0 auto;
+
         @extend %clear-btn;
         @extend %cart-order-btn;
     }
@@ -841,6 +866,34 @@
 }
 
 .row {
+    display: flex;
+    align-items: center;
+
+    &__text {
+        min-width: 320px;
+    }
+
+    &__select-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__price-box {
+        width: 4 * $spin-size-medium;
+        text-align: right;
+    }
+
+    &__price {
+        margin-right: 5px;
+        padding-left: 5px;
+    }
+
+    &__unit {
+        margin-right: 15px;
+    }
+
     .jq-number {
         padding: 0 $spin-size-medium;
 
@@ -861,9 +914,17 @@
     }
 
     &__delete-btn {
-        width: 15px;
-        height: 15px;
+        margin-left: 10px;
+        border-radius: 50%;
+        width: $spin-size-small;
+        height: $spin-size-small;
         background-image: url(../images/icons/main/delete.svg);
+        background-size: 50%;
+
+        &:hover {
+            background-image: url(../images/icons/main/delete-white.svg);
+            background-color: #f00;
+        }
 
         @extend %bg-center;
         @extend %clear-btn;

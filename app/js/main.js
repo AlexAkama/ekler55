@@ -242,10 +242,12 @@ var main =
         });
 
         $('.to-cart').on('click', function() {
+            reCalc();
             $('.cart__wrapper').fadeIn();
             $('body').addClass('fixed');
         });
 
+        // Закрытие при нажатии вне корзины
         // $('.cart').on('click', function() {
         //     $('.cart__wrapper').fadeOut();
         //     $('body').removeClass('fixed');
@@ -254,6 +256,20 @@ var main =
 
         $('.row__delete-btn').on('click', function(event) {
             event.target.parentElement.remove();
+            reCalc();
         });
+
+        function reCalc() {
+            let price = document.querySelectorAll('.row__price'),
+                input = document.querySelectorAll('input.row__input'),
+                total = document.querySelector('.cart__total-digit'),
+                sum = 0;
+            if (price.length > 0) {
+                for (let i = 0; i < price.length; i++) {
+                    sum = sum + price[i].textContent * input[i].value;
+                }
+            }
+            total.textContent = sum;
+        };
 
     };
