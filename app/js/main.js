@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', function() {
             image.classList.add('card__img');
             box.classList.add('card__box');
             text.classList.add('card__text-box');
-            cart.classList.add('card__to-cart');
+            cart.classList.add('card__cart__btn');
             select.classList.add('card__select');
 
             title.classList.add('card__title');
@@ -241,9 +241,10 @@ var main =
             return false;
         });
 
-        $('.to-cart').on('click', function() {
+        $('.cart__btn').on('click', function() {
+            // if ($('.cart__counter').text() == 0) return;
             reCalc();
-            $('.cart__wrapper').fadeIn();
+            $('.info__wrapper').fadeIn();
             $('body').addClass('fixed');
         });
 
@@ -263,13 +264,43 @@ var main =
             let price = document.querySelectorAll('.row__price'),
                 input = document.querySelectorAll('input.row__input'),
                 total = document.querySelector('.cart__total-digit'),
+                counter = document.querySelector('.cart__counter'),
+                count = 0,
                 sum = 0;
             if (price.length > 0) {
                 for (let i = 0; i < price.length; i++) {
                     sum = sum + price[i].textContent * input[i].value;
+                    count = count + Number(input[i].value);
                 }
             }
+            if (count > 0) {
+                $(counter).fadeIn();
+            } else {
+                $(counter).fadeOut();
+            }
+            if (count > 99) {
+                count = "K+"
+            }
+            counter.textContent = count;
             total.textContent = sum;
         };
+
+        $('input.row__input').on('input', function(event) {
+            reCalc();
+        });
+
+        $('.cart__submit').on('click', function() {
+            if ($('.cart__counter').text() == 0) {
+                $('.info__wrapper').fadeOut();
+                $('body').removeClass('fixed');
+                return;
+            }
+            $('.cart').fadeOut();
+            setTimeout(showConfirm, 500);
+        });
+
+        function showConfirm() {
+            $('.confirm').fadeIn();
+        }
 
     };

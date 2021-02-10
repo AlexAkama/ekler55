@@ -805,7 +805,7 @@
     @extend %dfcc;
 }
 
-.cart {
+.info {
     position: fixed;
     left: 0;
     right: 0;
@@ -817,18 +817,21 @@
         display: none;
     }
 
-    &__inner {
-        border: 1px solid $text-color-brown;
-        border-radius: 22px;
-        padding: 30px 20px 15px;
-        min-width: 310px;
-        font-size: 18px;
-        line-height: 24px;
-        background: #f8fffe;
+    @extend %dfcc;
+}
 
-        p {
-            display: inline-block;
-        }
+.cart {
+    display: inline-block;
+    border: 1px solid $text-color-brown;
+    border-radius: 22px;
+    padding: 30px 20px 15px;
+    min-width: 310px;
+    font-size: 18px;
+    line-height: 24px;
+    background: #f8fffe;
+
+    p {
+        display: inline-block;
     }
 
     &__row-box {
@@ -845,23 +848,40 @@
         margin-bottom: 30px;
     }
 
-    &__total-text {
-        min-width: 320px;
-    }
-
     &__total-row {
         font-size: 24px;
+        text-align: center;
     }
 
     &__submit {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 10px;
 
         @extend %clear-btn;
         @extend %cart-order-btn;
     }
 
-    @extend %dfcc;
+    &__btn {
+        position: relative;
+    }
+
+    &__counter {
+        position: absolute;
+        right: -7px;
+        top: -12px;
+        display: none;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: #fff;
+        background-color: #db4949;
+
+        @extend %PT-400;
+    }
+
     @extend %PT-400;
 }
 
@@ -928,6 +948,41 @@
 
         @extend %bg-center;
         @extend %clear-btn;
+    }
+}
+
+.confirm {
+    display: none;
+    border: 1px solid $text-color-brown;
+    border-radius: 22px;
+    padding: 30px 20px 15px;
+    max-width: 320px;
+    font-size: 18px;
+    line-height: 24px;
+    background: #f8fffe;
+}
+
+.form {
+    &__text {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        margin-bottom: 20px;
+        border: 2px solid #aec3c0;
+        border-radius: 7px;
+        padding: 0 10px;
+        width: 100%;
+        height: 40px;
+    }
+
+    &__submit {
+        display: block;
+        margin: 0 auto 10px;
+
+        @extend %clear-btn;
+        @extend %cart-order-btn;
     }
 }
 
