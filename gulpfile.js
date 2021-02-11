@@ -16,12 +16,12 @@ const {
 function styles() {
     return src('app/scss/style.scss')
         // outputStyle:
-        //expanded - полный формат как плагин
-        //nested - отступы также как в scss
-        //compact - классы в одну строку
-        //compressed - конвертация в одну строку (min)
+        // expanded - полный формат как плагин
+        // nested - отступы также как в scss
+        // compact - классы в одну строку
+        // compressed - конвертация в одну строку (min)
         .pipe(sass({
-            outputStyle: 'expanded',
+            outputStyle: 'compressed',
         }))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
@@ -37,12 +37,12 @@ function scripts() {
     return src([
             'node_modules/jquery/dist/jquery.js',
             'node_modules/focus-visible/dist/focus-visible.js',
-            'node_modules/slick-carousel/slick/slick.min.js',
+            'node_modules/slick-carousel/slick/slick.js',
             'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
             'app/js/main.js'
         ])
         .pipe(concat('main.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(dest('app/js'))
         .pipe(browserSync.stream());
 }

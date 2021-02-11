@@ -222,7 +222,7 @@
         @extend %dfsbc;
     }
 
-    &__price {
+    &__price-box {
         display: inline-block;
         font-size: 30px;
         line-height: 34px;
@@ -803,6 +803,10 @@
 
     @extend %bg-center;
     @extend %dfcc;
+}
+
+.top-btn {
+    display: none;
 }
 
 .info {
