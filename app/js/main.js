@@ -271,7 +271,12 @@ var main =
             $('.info__wrapper').fadeIn();
             $('body').addClass('fixed');
         });
-        // 
+        // Закрытие корзины при нажатии вне
+        $('.info').on('click', function(event) {
+            if (!$(event.target).closest('.into').length) {
+                hidePopPup();
+            }
+        });
 
         let rows = document.querySelector('.cart__row-box');
         // Добавление новой строки в корзину
@@ -396,7 +401,7 @@ var main =
         // Подтверждение корзины (переход к вводу дперсональных данных)
         $('.cart__submit').on('click', function() {
             if ($('.cart__counter').text() == 0) {
-                hidePup();
+                hidePopPup();
                 return;
             }
             $('.cart').fadeOut();
@@ -409,7 +414,7 @@ var main =
         }
 
         // Скрытие всплывающих окон
-        function hidePup() {
+        function hidePopPup() {
             $('.info__wrapper').fadeOut();
             $('body').removeClass('fixed');
         }
