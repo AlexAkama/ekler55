@@ -32,6 +32,25 @@ section {
     @extend %order-btn;
 }
 
+body .fixed-btn {
+    position: fixed;
+    right: 100px;
+    top: 50px;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        display: block;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: #ffd8df90;
+        transform: translate(-9px, -14px);
+    }
+}
+
 .top-btn {
     position: fixed;
     right: 100px;
