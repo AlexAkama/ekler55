@@ -36,6 +36,10 @@
     margin-bottom: 20px;
 }
 
+.logo-min {
+    display: none;
+}
+
 .nav {
     &::after {
         content: "";
@@ -172,7 +176,7 @@
     }
 
     &__card {
-        margin: 45px 0;
+        margin: 45px 20px;
         background-color: #fff;
     }
 }
