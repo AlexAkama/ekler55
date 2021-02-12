@@ -269,13 +269,13 @@ var main =
         $('.cart__btn').on('click', function(event) {
             event.preventDefault();
             reCalc();
-            $('.info__wrapper').fadeIn();
+            $('.popup__wrapper').fadeIn();
             $('.cart').show();
             $('.confirm').hide();
             $('body').addClass('fixed');
         });
         // Закрытие корзины при нажатии вне
-        $('.info').on('click', function(event) {
+        $('.popup').on('click', function(event) {
             if (!$(event.target).closest('.into').length) {
                 hidePopPup();
             }
@@ -421,7 +421,7 @@ var main =
 
         // Скрытие всплывающих окон
         function hidePopPup() {
-            $('.info__wrapper').fadeOut();
+            $('.popup__wrapper').fadeOut();
             $('body').removeClass('fixed');
         }
 

@@ -25,6 +25,10 @@
             max-width: 350px;
         }
     }
+
+    .top-btn {
+        right: 50px;
+    }
 }
 
 @media (max-width: 998px) {
@@ -60,6 +64,10 @@
         }
     }
 
+    .info {
+        padding: 50px 0;
+    }
+
     .assortment {
         &__filter-btn {
             font-size: 24px;
@@ -72,6 +80,13 @@
         &__link {
             font-size: 18px;
         }
+    }
+
+    .info p {
+        margin-bottom: 20px;
+        padding: 0 30px;
+        font-size: 24px;
+        line-height: 28px;
     }
 
     .home {
@@ -90,6 +105,18 @@
     .assortment {
         &__filter-btn:not(:last-child) {
             margin-right: 30px;
+        }
+    }
+
+    .contacts {
+        &__wrapper {
+            padding: 30px 40px;
+            width: auto;
+            height: auto;
+        }
+
+        &__list-item {
+            font-size: 24px;
         }
     }
 }
@@ -123,6 +150,7 @@
     }
 
     .title {
+        margin-bottom: 30px;
         padding-top: 30px;
     }
 
@@ -133,6 +161,10 @@
         &::before {
             height: 50px;
         }
+    }
+
+    .info {
+        padding: 20px 0;
     }
 
     .assortment {
@@ -156,7 +188,7 @@
     }
 
     .title {
-        font-size: 48px;
+        font-size: 38px;
 
         span {
             font-size: inherit;
@@ -168,9 +200,20 @@
             margin-right: 10px;
         }
     }
+
+    .top-btn {
+        right: 15px;
+        bottom: 15px;
+    }
 }
 
 @media (max-width: 480px) {
+    .info p {
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
     .home {
         &__wrapper {
             padding-left: 10px;
@@ -190,7 +233,9 @@
     }
 
     .title {
+        margin-bottom: 20px;
         padding: 0;
+        font-size: 28px;
     }
 
     .order-btn {
@@ -198,6 +243,19 @@
         width: 210px;
         height: 50px;
         font-size: 20px;
+    }
+
+    .contacts {
+        height: auto;
+        min-height: auto;
+
+        &__wrapper {
+            margin: 0 10px;
+        }
+
+        &__list-item {
+            font-size: 20px;
+        }
     }
 }
 
@@ -214,7 +272,8 @@
     }
 
     .title {
-        font-size: 36px;
+        margin-bottom: 10px;
+        font-size: 24px;
     }
 
     .order-btn {
