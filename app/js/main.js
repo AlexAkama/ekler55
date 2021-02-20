@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 viewProduct = document.createElement('img'),
                 viewTextBox = document.createElement('div'),
                 viewName = document.createElement('p'),
+                viewAvatar = document.createElement('img'),
                 viewText = document.createElement('p');
 
             navItem.classList.add('reviews__nav-item');
@@ -32,7 +33,8 @@ window.addEventListener('DOMContentLoaded', function() {
             viewProduct.classList.add('reviews__view-img');
             viewTextBox.classList.add('reviews__view-text-box');
             viewName.classList.add('reviews__view-name');
-            viewText.classList.add('reviews__view-text')
+            viewAvatar.classList.add('reviews__view-avatar');
+            viewText.classList.add('reviews__view-text');
 
             navAvatar.setAttribute('alt', 'autor image');
             navAvatar.setAttribute('src', 'images/content/reviews/avatars/' + reviews[i].avatar);
@@ -40,10 +42,15 @@ window.addEventListener('DOMContentLoaded', function() {
             navName.textContent = reviews[i].name;
             navInsta.textContent = reviews[i].insta;
 
+            viewAvatar.setAttribute('alt', 'autor image');
+            viewAvatar.setAttribute('src', 'images/content/reviews/avatars/' + reviews[i].avatar);
+            viewAvatar.setAttribute('loading', 'lazy');
+
             viewProduct.setAttribute('alt', 'product image');
             viewProduct.setAttribute('src', 'images/content/reviews/' + reviews[i].image);
             viewProduct.setAttribute('loading', 'lazy');
-            viewName.textContent = reviews[i].name;
+            viewName.append(viewAvatar);
+            viewName.innerHTML = viewName.innerHTML + reviews[i].name;
             viewText.textContent = reviews[i].text;
 
             navItem.append(navWrapper);
@@ -66,11 +73,17 @@ window.addEventListener('DOMContentLoaded', function() {
     function createGalleryItems() {
         let galleryBox = document.querySelector('.gallery__slider');
         for (let i = 0; i < gallery.length; i++) {
-            let image = document.createElement('img');
+            let wrapper = document.createElement('div'),
+                image = document.createElement('img');
+
+            wrapper.classList.add('gallery__wrapper');
             image.classList.add('gallery__img');
+
             image.setAttribute('alt', 'gallery image');
             image.setAttribute('src', 'images/content/gallery/' + gallery[i]);
-            galleryBox.append(image);
+
+            wrapper.append(image);
+            galleryBox.append(wrapper);
         }
 
     }
@@ -200,16 +213,17 @@ var main =
         $('.reviews__view').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
+            arrows: true,
+            dots: true,
             fade: true,
             asNavFor: '.reviews__nav'
         });
         $('.reviews__nav').slick({
             vertical: true,
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1,
+            arrows: false,
             asNavFor: '.reviews__view',
-            dots: true,
             focusOnSelect: true
         });
 
@@ -221,7 +235,20 @@ var main =
             pauseOnDotsHover: true,
             infinite: true,
             slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: false,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }, {
+                breakpoint: 780,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }]
+
         });
 
         // Плавный скролл
