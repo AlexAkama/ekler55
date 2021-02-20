@@ -337,6 +337,46 @@
 }
 
 @media (max-width: 480px) {
+    .card {
+        margin: 15px 10px;
+        min-height: unset;
+
+        &__box {
+            height: auto;
+        }
+
+        &__title {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        &__discription {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        &__price-box {
+            font-size: 22px;
+            line-height: 24px;
+        }
+
+        .jq-number {
+            padding: 0 25px;
+
+            &__field {
+                input {
+                    font-size: 22px;
+                    line-height: 24px;
+                }
+            }
+
+            &__spin,
+            &__field {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
 
     .info p,
     .offer p {
@@ -446,6 +486,17 @@
 }
 
 @media (max-width: 396px) {
+    .card {
+        &__img {
+            height: 180px;
+        }
+
+        &__button {
+            padding: 10px 20px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
 
     .info p,
     .offer p {
