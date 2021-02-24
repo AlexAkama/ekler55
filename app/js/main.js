@@ -129,11 +129,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
             image.setAttribute('alt', 'product image');
             image.setAttribute('src', 'images/content/products/' + products[i].image);
+            image.setAttribute('onerror', "this.src='/images/main/no-image.png'");
             image.setAttribute('loading', 'lazy');
-            input.setAttribute("type", "number");
-            input.setAttribute("value", 1);
-            input.setAttribute("min", 1);
-            input.setAttribute("max", 99);
+            input.setAttribute('type', 'number');
+            input.setAttribute('value', 1);
+            input.setAttribute('min', 1);
+            input.setAttribute('max', 99);
 
             title.textContent = products[i].name;
             discr.textContent = products[i].description;
@@ -165,6 +166,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     break;
                 case 'выпечка':
                     bakeryBox.append(card);
+                    break;
+                case 'полуфабрикаты':
+                    semiBox.append(card);
                     break;
             }
         }
