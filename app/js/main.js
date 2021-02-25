@@ -142,6 +142,10 @@ window.addEventListener('DOMContentLoaded', function() {
             unit.textContent = products[i].unit;
             btn.textContent = "Добавить в корзину"
 
+            if (discr.textContent == '') {
+                card.classList.add('no-discription');
+            }
+
             card.append(image);
             textBox.append(title);
             textBox.append(discr);
