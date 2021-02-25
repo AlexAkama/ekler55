@@ -38,9 +38,15 @@
 
 .logo-min {
     display: none;
+    margin: 0 auto;
 }
 
 .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
     &::after {
         content: "";
         display: block;
@@ -67,15 +73,14 @@
     &__link {
         @extend %nav-link;
     }
+}
 
-    &__list-item--icons {
-        width: 72px;
-
-        @extend %dfsbc;
+.icon {
+    &__box {
+        padding-left: 20px;
     }
 
-    &__icon-link {
-        margin-top: 5px;
+    &__link {
         outline: none;
 
         svg path {
@@ -83,7 +88,7 @@
         }
 
         &:not(:last-child) {
-            // margin-right: 16px;
+            margin-right: 16px;
         }
 
         &:focus svg path {
@@ -98,6 +103,15 @@
             fill: $text-color-tiffany;
         }
     }
+}
+
+.mobile-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.cancel {
+    margin-bottom: 10px;
 }
 
 .assortment {
@@ -280,6 +294,8 @@
             font-family: "PTSerif-Regular", serif;
             text-align: center;
         }
+
+        @extend %dfcc;
     }
 
     // кнопки
@@ -811,11 +827,14 @@
 }
 
 .cart {
-    display: inline-block;
+    display: none;
+    overflow: auto;
+    margin: 3%;
     border: 1px solid $text-color-brown;
     border-radius: 22px;
-    padding: 30px 20px 15px;
+    padding: 30px 10px 15px 20px;
     min-width: 310px;
+    max-height: 95%;
     font-size: 18px;
     line-height: 24px;
     background: #f8fffe;
@@ -878,9 +897,13 @@
 .row {
     display: flex;
     align-items: center;
+    border-bottom: 2px solid $text-color-tiffany;
+    padding-bottom: 7px;
 
     &__text {
-        min-width: 320px;
+        padding-left: 7px;
+        width: 320px;
+        word-wrap: break-word;
     }
 
     &__select-box {
@@ -892,16 +915,12 @@
 
     &__price-box {
         width: 4 * $spin-size-medium;
-        text-align: right;
+        text-align: center;
     }
 
     &__price {
         margin-right: 5px;
         padding-left: 5px;
-    }
-
-    &__unit {
-        margin-right: 15px;
     }
 
     .jq-number {
@@ -926,8 +945,8 @@
     &__delete-btn {
         margin-left: 10px;
         border-radius: 50%;
-        width: $spin-size-small;
-        height: $spin-size-small;
+        min-width: 30px;
+        min-height: 30px;
         background-image: url(../images/icons/main/delete.svg);
         background-size: 50%;
 

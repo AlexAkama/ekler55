@@ -159,6 +159,15 @@
         }
     }
 
+    .icon {
+        &__box {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            padding: 0;
+        }
+    }
+
     .info p {
         padding: 0 30px;
     }
@@ -217,8 +226,28 @@
         }
 
         &__list {
-            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            display: block;
+            padding: 20px;
+            min-width: 60%;
+            background-color: #f6ede6;
+            transform: translateX(-100%);
+            transition: all 0.3s;
         }
+    }
+
+    .mobile-icon {
+        display: inline-block;
+    }
+
+    .burger {
+        position: absolute;
+        left: 20px;
+        top: 20px;
     }
 
     .home {
@@ -284,6 +313,11 @@
 }
 
 @media (max-width: 640px) {
+    body .fixed-btn {
+        right: 27px;
+        top: 27px;
+    }
+
     .order-btn {
         width: 250px;
         height: 72px;
@@ -337,6 +371,10 @@
 }
 
 @media (max-width: 480px) {
+    .logo-min {
+        margin-bottom: 10px;
+    }
+
     .card {
         margin: 15px 10px;
         min-height: unset;
@@ -486,6 +524,20 @@
 }
 
 @media (max-width: 396px) {
+    .icon {
+        &__box {
+            right: 10px;
+        }
+
+        &__link:not(:last-child) {
+            margin-right: 0;
+        }
+    }
+
+    .burger {
+        left: 10px;
+    }
+
     .card {
         &__img {
             height: 180px;
@@ -578,6 +630,40 @@
             &:not(:last-child) {
                 margin-bottom: 10px;
             }
+        }
+    }
+
+    .row {
+        &__delete-btn {
+            min-width: 20px;
+            min-height: 20px;
+        }
+
+        .jq-number {
+            padding: 0 $spin-size-small;
+
+            &__field {
+                width: $spin-size-small;
+                height: $spin-size-small;
+
+                input {
+                    font-size: $spin-text-size-small;
+                    line-height: $spin-size-small;
+                }
+            }
+
+            &__spin {
+                width: $spin-size-small;
+                height: $spin-size-small;
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__price-box {
+            font-size: 12px;
         }
     }
 }

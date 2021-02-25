@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+    let menuType = ["торт", "", "эклер", "выпечка", "полуфабрикаты"];
 
     function createReviewItems() {
         let reviewsView = document.querySelector('.reviews__view'),
@@ -127,6 +128,7 @@ window.addEventListener('DOMContentLoaded', function() {
             input.classList.add('card__input');
             btn.classList.add('card__button')
 
+            card.setAttribute('type', menuType.indexOf(products[i].type))
             image.setAttribute('alt', 'product image');
             image.setAttribute('src', products[i].image);
             image.setAttribute('onerror', "this.src='images/main/no-image.png'");
@@ -187,6 +189,16 @@ window.addEventListener('DOMContentLoaded', function() {
 
 var main =
     function() {
+
+        // Мобильное меню
+        $('.burger').on('click', function() {
+            $('.popup__wrapper').fadeIn();
+            $('.nav__list').addClass('show');
+        });
+        $('.cancel').on('click', function() {
+            $('.nav__list').removeClass('show');
+            $('.popup__wrapper').fadeOut();
+        })
 
         // Табы в ассортименте
         const tabsContent = document.querySelectorAll('.assortment__box');
@@ -310,7 +322,7 @@ var main =
             $('body').addClass('fixed');
         });
         // Закрытие корзины при нажатии вне
-        $('.popup').on('click', function(event) {
+        $('.popup, .nav__link').on('click', function(event) {
             if (!$(event.target).closest('.into').length) {
                 hidePopPup();
             }
@@ -320,6 +332,7 @@ var main =
         // Добавление новой строки в корзину
         $('.card__button').on('click', function(event) {
             let card = event.target.parentElement.parentElement.parentElement,
+                types = ["Торт", "Пироженное", "Эклер", "", ""],
                 elementId = '#code' + card.id,
                 element = document.querySelector(elementId);
             if (typeof element != 'undefined' && element != null) {
@@ -327,7 +340,7 @@ var main =
                     Number(element.querySelector('input.row__input').value) +
                     Number(card.querySelector('input.card__input').value)
             } else {
-                let type = 'Торт',
+                let type = types[card.getAttribute('type')],
                     title = card.querySelector('.card__title').textContent,
                     count = card.querySelector('input.card__input').value,
                     price = card.querySelector('.card__price').textContent,
@@ -372,7 +385,7 @@ var main =
             input.setAttribute('max', '99');
             input.setAttribute('value', value);
 
-            text.textContent = type + ' «' + title + '»';
+            text.textContent = (type == "") ? title : type + ' «' + title + '»';
             price.textContent = cost;
             per.textContent = unit;
 
@@ -416,7 +429,6 @@ var main =
                 $('.cart__total').show();
                 $('.cart__total-text').text('Итого к оплате:');
                 $('.cart__submit').text('Оформить заказ');
-                console.log(this);
                 if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
                     $('.cart__btn').addClass('fixed-btn');
                 }
@@ -458,6 +470,8 @@ var main =
         function hidePopPup() {
             $('.popup__wrapper').fadeOut();
             $('body').removeClass('fixed');
+            $('.into').hide();
+            $('.nav__list').removeClass('show');
         }
 
     };

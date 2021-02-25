@@ -29,6 +29,10 @@ section {
     max-width: 1170px;
 }
 
+.nav__list.show {
+    transform: translateX(0);
+}
+
 .order-btn {
     @extend %order-btn;
 }
@@ -74,4 +78,24 @@ body .fixed-btn {
 
     @extend %bg-center;
     @extend %colors-action-btn;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 50px;
+    background-color: $text-color-tiffany;
+}
+
+.cart::-webkit-scrollbar-track-piece:end {
+    margin-bottom: 25px;
+    background: transparent;
+}
+
+.cart::-webkit-scrollbar-track-piece:start {
+    margin-top: 25px;
+    background: transparent;
 }
