@@ -297,130 +297,130 @@ var products = [{
     },
 
     {
-        "code": "EK1569",
+        "code": "208",
         "type": "эклер",
         "name": "Ванильный шоколад",
         "description": "Французское заварное тесто с хрустящим песочным кракелюром и кремом из взбитых сливок с белым шоколадом и ликером «Бейлиз»",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/2.jpg"
+        "image": "images/content/products/eclairs/208.jpg"
     },
     {
-        "code": "EK4532",
+        "code": "209",
         "type": "эклер",
         "name": "Карамельный",
         "description": "Заварное тесто, приготовленное по французскому рецепту с кремом на основе сливочного сыра «Маскарпоне» и сливочной карамели. Покрыт карамелью",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/3.jpg"
+        "image": "images/content/products/eclairs/209.jpg"
     },
     {
-        "code": "EK7563",
+        "code": "210",
         "type": "эклер",
         "name": "Классический",
         "description": "Заварное тесто, приготовленное по французскому рецепту с кремом «Муслин». Покрыт натуральным шоколадом",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/4.jpg"
+        "image": "images/content/products/eclairs/210.jpg"
     },
     {
-        "code": "EK7531",
+        "code": "307",
         "type": "эклер",
         "name": "Курага",
         "description": "Нежное заварное тесто с заварным кремом с курагой",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/5.jpg"
+        "image": "images/content/products/eclairs/307.jpg"
     },
     {
-        "code": "EK8542",
+        "code": "580",
         "type": "эклер",
         "name": "Маковый",
         "description": "Нежное заварное тесто, заварной крем с маком, ганаш из белого шоколада, мак, томленый в молоке",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/6.jpg"
+        "image": "images/content/products/eclairs/580.jpg"
     },
     {
-        "code": "EK9547",
+        "code": "480",
         "type": "эклер",
         "name": "Манго",
         "description": "Нежное заварное тесто, заварной крем с пюре из манго и лимонным соком. Покрыт шоколадной глазурью с манго",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/7.jpg"
+        "image": "images/content/products/eclairs/480.jpg"
     },
     {
-        "code": "EK6541",
+        "code": "578",
         "type": "эклер",
         "name": "Париж",
         "description": "Заварное тесто, крем из вареной сгущенки со сливочным маслом и обжареным фундуком, ванильный крем на ганаше из белого шоколада, хрустящий топ из бельгийского шоколада с арахисом",
         "price": 90,
         "unit": "шт",
-        "image": "images/content/products/eclairs/8.jpg"
+        "image": "images/content/products/eclairs/578.jpg"
     },
     {
-        "code": "EK6584",
+        "code": "212",
         "type": "эклер",
         "name": "С ореховым пралине",
         "description": "Заварное пирожное с ореховым пралине на основе сливочно-заварного крема с вареной сгущенкой и добавлением орехового пралине. Сверху покрыт молочным шоколадом с ореховыми лепестками",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/9.jpg"
+        "image": "images/content/products/eclairs/212.jpg"
     },
     {
-        "code": "EK3514",
+        "code": "348",
         "type": "эклер",
         "name": "Смородиновый",
         "description": "Заварное тесто с хрустящим покрытием крокан, крем Патисьер со смородиной",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/10.jpg"
+        "image": "images/content/products/eclairs/348.jpg"
     },
     {
-        "code": "EK2585",
+        "code": "587",
         "type": "эклер",
         "name": "Соленая карамель",
         "description": "Заварное тесто, крем из сливок и сыра Маскарпоне с карамелью, прослойка из соленой карамели, топ из бельгийского молочного шоколада",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/11.jpg"
+        "image": "images/content/products/eclairs/587.jpg"
     },
     {
-        "code": "EK1595",
+        "code": "237",
         "type": "эклер",
         "name": "Фисташковый",
         "description": "Заварное пирожное с фисташковым пралине на основе сливочно-заварного крема. Сверху покрыт песочной хрустящей корочкой",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/12.jpg"
+        "image": "images/content/products/eclairs/237.jpg"
     },
     {
-        "code": "EK4565",
+        "code": "347",
         "type": "эклер",
         "name": "Черничный",
         "description": "Заварное тесто с хрустящим покрытием крокан, крем Патисьер с черникой",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/13.jpg"
+        "image": "images/content/products/eclairs/347.jpg"
     },
     {
-        "code": "EK7535",
+        "code": "238",
         "type": "эклер",
         "name": "Шоколадный",
         "description": "Заварное тесто,нежный сливочный крем со сгущеным молоком и какао, шоколадный ганаш, грецкий орех",
         "price": 70,
         "unit": "шт",
-        "image": "images/content/products/eclairs/14.jpg"
+        "image": "images/content/products/eclairs/238.jpg"
     },
     {
-        "code": "EK8525",
+        "code": "579",
         "type": "эклер",
         "name": "Ягодный",
         "description": "Заварное тесто, крем на основе сыра Маскарпоне с ягодным джемом",
         "price": 80,
         "unit": "шт",
-        "image": "images/content/products/eclairs/15.jpg"
+        "image": "images/content/products/eclairs/579.jpg"
     },
 
     {
