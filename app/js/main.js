@@ -268,7 +268,7 @@ var main =
         // События при прокрутке экрана
         $(window).on('scroll', function() {
             // Кнопка наверх
-            if ($(this).scrollTop() > $('#cakes').offset().top - 200) {
+            if ($(this).scrollTop() > $('#assortment').offset().top + 500) {
                 $('.top-btn').fadeIn();
             } else {
                 $('.top-btn').fadeOut();
