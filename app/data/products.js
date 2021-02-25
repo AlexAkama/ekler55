@@ -5,7 +5,7 @@ var products = [{
         "description": "Коржи из безе с добавлением орехов с прослойкой из чернослива и сливочного крема",
         "price": 600,
         "unit": "кг",
-        "image": "/cakes/320.jpg"
+        "image": "images/content/products/cakes/320.jpg"
     },
     {
         "code": "333",
@@ -14,7 +14,7 @@ var products = [{
         "description": "Ванильные коржи на белой сгущенке, творожный крем с добавлением взбитых сливок с прослойкой из малины",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/333.jpg"
+        "image": "images/content/products/cakes/333.jpg"
     },
     {
         "code": "155",
@@ -23,7 +23,7 @@ var products = [{
         "description": "Ванильные коржи на белой сгущенке, крем из натуральных взбитых сливок с прослойкой из карамелизированного банана",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/155.jpg"
+        "image": "images/content/products/cakes/155.jpg"
     },
     {
         "code": "157",
@@ -32,7 +32,7 @@ var products = [{
         "description": "Шоколадные коржи, крем на основе сметаны и взбитых сливок",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/157.jpg"
+        "image": "images/content/products/cakes/157.jpg"
     },
     {
         "code": "156",
@@ -41,7 +41,7 @@ var products = [{
         "description": "Основа из ванильного бисквита, мусс из взбитых сливок, сыра маскарпоне и клубники",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/156.jpg"
+        "image": "images/content/products/cakes/156.jpg"
     },
     {
         "code": "159",
@@ -50,7 +50,7 @@ var products = [{
         "description": "Три сметанных бисквита: с маком, грецким орехом, изюмом. Коржи пропитаны сиропом «помадка» и прослоены кремом на основе сливочного масла и вареной сгущенки",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/159.jpg"
+        "image": "images/content/products/cakes/159.jpg"
     },
     {
         "code": "160",
@@ -59,7 +59,7 @@ var products = [{
         "description": "Три сметанных бисквита: с маком, грецким орехом, изюмом. Коржи пропитаны сиропом «помадка», прослоены кремом из сметаны и взбитых сливок",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/160.jpg"
+        "image": "images/content/products/cakes/160.jpg"
     },
     {
         "code": "337",
@@ -68,7 +68,7 @@ var products = [{
         "description": "Масляные бисквитные коржи с добавлением какао, с прослойкой из сливочного крема на основе сливок и сыра маскарпоне",
         "price": 1200,
         "unit": "кг",
-        "image": "/cakes/337.jpg"
+        "image": "images/content/products/cakes/337.jpg"
     },
     {
         "code": "161",
@@ -77,7 +77,7 @@ var products = [{
         "description": "Основа из ванильного бисквита, мусс из взбитых сливок, сыра маскарпоне и малины",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/161.jpg"
+        "image": "images/content/products/cakes/161.jpg"
     },
     {
         "code": "162",
@@ -86,7 +86,7 @@ var products = [{
         "description": "Медово-карамельные коржи, сметанный крем с прослойкой из грецкого ореха и карамелизированного чернослива",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/162.jpg"
+        "image": "images/content/products/cakes/162.jpg"
     },
     {
         "code": "163",
@@ -95,7 +95,7 @@ var products = [{
         "description": "Три сметанно-песочных коржа и три шоколадных с прослойкой из сметанно-сливочного крема. Сверху покрыт натуральным шоколадом",
         "price": 930,
         "unit": "кг",
-        "image": "/cakes/163.jpg"
+        "image": "images/content/products/cakes/163.jpg"
     },
     {
         "code": "164",
@@ -104,7 +104,7 @@ var products = [{
         "description": "Основа из классического бисквита, мусс из клубничного пюре, крема Патисьер и взбитых сливок с прослойкой клубничного конфи",
         "price": 980,
         "unit": "кг",
-        "image": "/cakes/164.jpg"
+        "image": "images/content/products/cakes/164.jpg"
     },
     {
         "code": "599",
@@ -113,7 +113,7 @@ var products = [{
         "description": "Основа из классического биквита, мусс из протёртой облепихи с сахаром, крема Патисьер и взбитых сливок с прослойкой из облипихового конфи",
         "price": 980,
         "unit": "кг",
-        "image": "/cakes/599.jpg"
+        "image": "images/content/products/cakes/599.jpg"
     },
     {
         "code": "165",
@@ -122,7 +122,7 @@ var products = [{
         "description": "Слоеные коржи, приготовленные по классической рецептуре на основе сливочного масла, прослоенные сливочно-заварным кремом с ванилью и одним слоем ягодной прослойки из смородины",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/165.jpg"
+        "image": "images/content/products/cakes/165.jpg"
     },
     {
         "code": "166",
@@ -131,7 +131,7 @@ var products = [{
         "description": "Слоеные коржи, приготовленные по классическому рецепту на основе сливочного масла и прослоенные кремом на основе взбитых сливок и сгущенного молока с ванилью, прослойка из черной смородины.",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/166.jpg"
+        "image": "images/content/products/cakes/166.jpg"
     },
     {
         "code": "588",
@@ -140,7 +140,7 @@ var products = [{
         "description": "Масляные бисквитные коржи с добавлением какао, пропитанные сливочным кремом из сыра маскарпоне, сливочным муссом с крем-чизом, украшенные профитролями с начинкой из малины и вишни ",
         "price": 950,
         "unit": "кг",
-        "image": "/cakes/588.jpg"
+        "image": "images/content/products/cakes/588.jpg"
     },
     {
         "code": "168",
@@ -149,7 +149,7 @@ var products = [{
         "description": "ТОЛЬКО НА ЗАКАЗ Суфле на основе белкового и масляного крема, песочный корж и прослойка из ганаша",
         "price": 900,
         "unit": "кг",
-        "image": ""
+        "image": "images/content/products/"
     },
     {
         "code": "169",
@@ -158,7 +158,7 @@ var products = [{
         "description": "Медово-карамельные коржи, крем из взбитых сливок и вареной сгущенки",
         "price": 870,
         "unit": "кг",
-        "image": "/cakes/169.img"
+        "image": "images/content/products/cakes/169.img"
     },
     {
         "code": "170",
@@ -167,7 +167,7 @@ var products = [{
         "description": "Три слоя белого бисквита, пропитанные кокосовым сиропом и прослоенные кремом на основе кокосового молока и кокосовой начинки «Рафаэлло» с добавлением дробленого миндаля. Сверху посыпан кокосовой стружкой",
         "price": 9800,
         "unit": "кг",
-        "image": "/cakes/170.img"
+        "image": "images/content/products/cakes/170.img"
     },
     {
         "code": "171",
@@ -176,7 +176,7 @@ var products = [{
         "description": "Итальянская меренга между двух шоколадных бисквитов, пропитанных сиропом с коньяком и прослоенных кремом с жареным арахисом и кремом из взбитых сливок. Сверху покрыт натуральным шоколадом",
         "price": 980,
         "unit": "кг",
-        "image": "/cakes/171.img"
+        "image": "images/content/products/cakes/171.img"
     },
     {
         "code": "172",
@@ -185,7 +185,7 @@ var products = [{
         "description": "Муссовый торт, основа из белого бисквита, пропитанного ликером «Бейлиз». Три мусса: белый, молочной, горький. Сверху покрыт темным шоколадом",
         "price": 980,
         "unit": "кг",
-        "image": "/cakes/172.img"
+        "image": "images/content/products/cakes/172.img"
     },
     {
         "code": "173",
@@ -194,7 +194,7 @@ var products = [{
         "description": "Миндальные коржи с кремом «шоколадный ганаш»",
         "price": 1400,
         "unit": "кг",
-        "image": "/cakes/173.img"
+        "image": "images/content/products/cakes/173.img"
     },
     {
         "code": "503",
@@ -203,7 +203,7 @@ var products = [{
         "description": "Коржи из фундучной муки на основе меренги, пропитанные заварным кремом Патисьер, взбитыми сливками и карамелизованными яблоками с корицей. Оформлен шапкой из итальянской заварной меренги    ",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/503.img"
+        "image": "images/content/products/cakes/503.img"
     },
     {
         "code": "174",
@@ -212,7 +212,7 @@ var products = [{
         "description": "РЕДКО ПОД ЗАКАЗ Черемуховые коржи, пропитанные сиропом и Амаретто, прослоенные сливочно-сметанным кремом. Покрыт натуральным шоколадом",
         "price": 900,
         "unit": "кг",
-        "image": "/cakes/174.img"
+        "image": "images/content/products/cakes/174.img"
     },
     {
         "code": "177",
@@ -221,7 +221,7 @@ var products = [{
         "description": "Шоколадно-масляный бисквит, пропитанный сиропом и Амаретто, прослоенный желированной вишней и кремом на основе натуральных взбитых сливок со сметаной",
         "price": 960,
         "unit": "кг",
-        "image": "/cakes/177.img"
+        "image": "images/content/products/cakes/177.img"
     },
     {
         "code": "167",
@@ -230,7 +230,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/167.img"
+        "image": "images/content/products/cakes/167.img"
     },
     {
         "code": "426",
@@ -239,7 +239,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/426.img"
+        "image": "images/content/products/cakes/426.img"
     },
     {
         "code": "437",
@@ -248,7 +248,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/437.img"
+        "image": "images/content/products/cakes/437.img"
     },
     {
         "code": "438",
@@ -257,7 +257,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/438.img"
+        "image": "images/content/products/cakes/438.img"
     },
     {
         "code": "502",
@@ -266,7 +266,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/502.img"
+        "image": "images/content/products/cakes/502.img"
     },
     {
         "code": "504",
@@ -275,7 +275,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/504.img"
+        "image": "images/content/products/cakes/504.img"
     },
     {
         "code": "537",
@@ -284,7 +284,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/537.img"
+        "image": "images/content/products/cakes/537.img"
     },
     {
         "code": "538",
@@ -293,7 +293,7 @@ var products = [{
         "description": "",
         "price": 0,
         "unit": "кг",
-        "image": "/cakes/538.img"
+        "image": "images/content/products/cakes/538.img"
     },
 
     {
@@ -303,7 +303,7 @@ var products = [{
         "description": "Французское заварное тесто с хрустящим песочным кракелюром и кремом из взбитых сливок с белым шоколадом и ликером «Бейлиз»",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/2.jpg"
+        "image": "images/content/products/eclairs/2.jpg"
     },
     {
         "code": "EK4532",
@@ -312,7 +312,7 @@ var products = [{
         "description": "Заварное тесто, приготовленное по французскому рецепту с кремом на основе сливочного сыра «Маскарпоне» и сливочной карамели. Покрыт карамелью",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/3.jpg"
+        "image": "images/content/products/eclairs/3.jpg"
     },
     {
         "code": "EK7563",
@@ -321,7 +321,7 @@ var products = [{
         "description": "Заварное тесто, приготовленное по французскому рецепту с кремом «Муслин». Покрыт натуральным шоколадом",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/4.jpg"
+        "image": "images/content/products/eclairs/4.jpg"
     },
     {
         "code": "EK7531",
@@ -330,7 +330,7 @@ var products = [{
         "description": "Нежное заварное тесто с заварным кремом с курагой",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/5.jpg"
+        "image": "images/content/products/eclairs/5.jpg"
     },
     {
         "code": "EK8542",
@@ -339,7 +339,7 @@ var products = [{
         "description": "Нежное заварное тесто, заварной крем с маком, ганаш из белого шоколада, мак, томленый в молоке",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/6.jpg"
+        "image": "images/content/products/eclairs/6.jpg"
     },
     {
         "code": "EK9547",
@@ -348,7 +348,7 @@ var products = [{
         "description": "Нежное заварное тесто, заварной крем с пюре из манго и лимонным соком. Покрыт шоколадной глазурью с манго",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/7.jpg"
+        "image": "images/content/products/eclairs/7.jpg"
     },
     {
         "code": "EK6541",
@@ -357,7 +357,7 @@ var products = [{
         "description": "Заварное тесто, крем из вареной сгущенки со сливочным маслом и обжареным фундуком, ванильный крем на ганаше из белого шоколада, хрустящий топ из бельгийского шоколада с арахисом",
         "price": 90,
         "unit": "шт",
-        "image": "eclairs/8.jpg"
+        "image": "images/content/products/eclairs/8.jpg"
     },
     {
         "code": "EK6584",
@@ -366,7 +366,7 @@ var products = [{
         "description": "Заварное пирожное с ореховым пралине на основе сливочно-заварного крема с вареной сгущенкой и добавлением орехового пралине. Сверху покрыт молочным шоколадом с ореховыми лепестками",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/9.jpg"
+        "image": "images/content/products/eclairs/9.jpg"
     },
     {
         "code": "EK3514",
@@ -375,7 +375,7 @@ var products = [{
         "description": "Заварное тесто с хрустящим покрытием крокан, крем Патисьер со смородиной",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/10.jpg"
+        "image": "images/content/products/eclairs/10.jpg"
     },
     {
         "code": "EK2585",
@@ -384,7 +384,7 @@ var products = [{
         "description": "Заварное тесто, крем из сливок и сыра Маскарпоне с карамелью, прослойка из соленой карамели, топ из бельгийского молочного шоколада",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/11.jpg"
+        "image": "images/content/products/eclairs/11.jpg"
     },
     {
         "code": "EK1595",
@@ -393,7 +393,7 @@ var products = [{
         "description": "Заварное пирожное с фисташковым пралине на основе сливочно-заварного крема. Сверху покрыт песочной хрустящей корочкой",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/12.jpg"
+        "image": "images/content/products/eclairs/12.jpg"
     },
     {
         "code": "EK4565",
@@ -402,7 +402,7 @@ var products = [{
         "description": "Заварное тесто с хрустящим покрытием крокан, крем Патисьер с черникой",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/13.jpg"
+        "image": "images/content/products/eclairs/13.jpg"
     },
     {
         "code": "EK7535",
@@ -411,7 +411,7 @@ var products = [{
         "description": "Заварное тесто,нежный сливочный крем со сгущеным молоком и какао, шоколадный ганаш, грецкий орех",
         "price": 70,
         "unit": "шт",
-        "image": "eclairs/14.jpg"
+        "image": "images/content/products/eclairs/14.jpg"
     },
     {
         "code": "EK8525",
@@ -420,7 +420,7 @@ var products = [{
         "description": "Заварное тесто, крем на основе сыра Маскарпоне с ягодным джемом",
         "price": 80,
         "unit": "шт",
-        "image": "eclairs/15.jpg"
+        "image": "images/content/products/eclairs/15.jpg"
     },
 
     {
@@ -430,7 +430,7 @@ var products = [{
         "description": "Сдобное дрожжевое тесто с сочной начинкой из вишневого и яблочного пюре с хрустящей сладкой штрейзельной крошкой",
         "price": 39,
         "unit": "шт",
-        "image": "bakery/1.jpg"
+        "image": "images/content/products/bakery/1.jpg"
     },
     {
         "code": "BK4565",
@@ -439,7 +439,7 @@ var products = [{
         "description": "Слоеное тесто с начинкой из горбуши с луком и специями, посыпанный кунжутом",
         "price": 70,
         "unit": "шт",
-        "image": "bakery/2.jpg"
+        "image": "images/content/products/bakery/2.jpg"
     },
     {
         "code": "BK7535",
@@ -448,7 +448,7 @@ var products = [{
         "description": "Сдобное дрожжевое тесто с начинкой из тушеной капусты и моркови",
         "price": 29,
         "unit": "шт",
-        "image": "bakery/3.jpg"
+        "image": "images/content/products/bakery/3.jpg"
     },
     {
         "code": "BK8525",
@@ -457,7 +457,7 @@ var products = [{
         "description": "Слоеное тесто с начинкой из твердого сыра с зеленью",
         "price": 49,
         "unit": "шт",
-        "image": "bakery/4.jpg"
+        "image": "images/content/products/bakery/4.jpg"
     },
     {
         "code": "BK9515",
@@ -466,7 +466,7 @@ var products = [{
         "description": "Слоеное тесто с начинкой из рубленого мяса с луком и специями, посыпанный кунжутом",
         "price": 70,
         "unit": "шт",
-        "image": "bakery/5.jpg"
+        "image": "images/content/products/bakery/5.jpg"
     },
     {
         "code": "BK6545",
@@ -475,7 +475,7 @@ var products = [{
         "description": "Слоеное тесто с начинкой из обжаренной куриной грудки со специями",
         "price": 70,
         "unit": "шт",
-        "image": "bakery/6.jpg"
+        "image": "images/content/products/bakery/6.jpg"
     },
 
     {
@@ -485,7 +485,7 @@ var products = [{
         "description": "",
         "price": 320,
         "unit": "кг",
-        "image": "semi/258.jpg"
+        "image": "images/content/products/semi/258.jpg"
     },
     {
         "code": "259",
@@ -494,7 +494,7 @@ var products = [{
         "description": "",
         "price": 260,
         "unit": "кг",
-        "image": "semi/259.jpg"
+        "image": "images/content/products/semi/259.jpg"
     },
     {
         "code": "260",
@@ -503,7 +503,7 @@ var products = [{
         "description": "",
         "price": 320,
         "unit": "кг",
-        "image": "semi/260.jpg"
+        "image": "images/content/products/semi/260.jpg"
     },
     {
         "code": "261",
@@ -512,7 +512,7 @@ var products = [{
         "description": "",
         "price": 480,
         "unit": "кг",
-        "image": "semi/261.jpg"
+        "image": "images/content/products/semi/261.jpg"
     },
     {
         "code": "262",
@@ -521,7 +521,7 @@ var products = [{
         "description": "",
         "price": 460,
         "unit": "кг",
-        "image": "semi/262.jpg"
+        "image": "images/content/products/semi/262.jpg"
     },
     {
         "code": "480",
@@ -530,7 +530,7 @@ var products = [{
         "description": "",
         "price": 120,
         "unit": "кг",
-        "image": "semi/480.jpg"
+        "image": "images/content/products/semi/480.jpg"
     },
 
 ]
