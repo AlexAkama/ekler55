@@ -16,7 +16,7 @@ var reviews = [{
         "name": "Алла Дидык",
         "insta": "@alladiduk",
         "image": "review3.jpg",
-        "text": "Какая кроасота внутри!!!"
+        "text": "Какая красота внутри!!!"
     }, {
         "avatar": "avatar4.jpg",
         "name": "Петр Петров",
