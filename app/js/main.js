@@ -241,10 +241,8 @@ function getMenu() {
             createMenuItems();
         } else {
             console.log("Ошибка: данные не загружены");
-            if (content.textContent == "Загрузка данных..") {
-                content.classList.add('error');
-                content.innerHTML = "Данные не загружены.<br>Попробуйте перезагрузить страницу."
-            }
+            content.classList.add('error');
+            content.innerHTML = "Данные не загружены.<br>Попробуйте перезагрузить страницу."
         }
     }
 }
@@ -258,287 +256,287 @@ window.addEventListener('DOMContentLoaded', function() {
 
 })
 
-    function main() {
+function main() {
 
-        // Мобильное меню
-        $('.burger').on('click', function() {
-            $('.popup__wrapper').fadeIn();
-            $('.nav__list').addClass('show');
-        });
-        $('.cancel').on('click', function() {
-            $('.nav__list').removeClass('show');
-            $('.popup__wrapper').fadeOut();
-        })
+    // Мобильное меню
+    $('.burger').on('click', function() {
+        $('.popup__wrapper').fadeIn();
+        $('.nav__list').addClass('show');
+    });
+    $('.cancel').on('click', function() {
+        $('.nav__list').removeClass('show');
+        $('.popup__wrapper').fadeOut();
+    })
 
-        // Табы в ассортименте
-        const tabsContent = document.querySelectorAll('.assortment__box');
-        tabsContent.forEach(element => {
-            $(element).addClass('hide');
-            $(element).addClass('invisible');
-        })
-        $(tabsContent[0]).removeClass('hide');
-        $(tabsContent[0]).removeClass('invisible');
-        $('.assortment__filter-btn').on('click', function(event) {
-            event.preventDefault;
-            let targetName = $(event.target).attr('value'),
-                activeBtn = $('.assortment__filter-btn--active'),
-                activeContent = $('.assortment__box--active'),
-                targetContent = $('.assortment__box--' + targetName);
-            $(event.target).addClass('assortment__filter-btn--active');
-            activeContent.addClass('invisible')
-            setTimeout(function() {
-                activeBtn.removeClass('assortment__filter-btn--active');
-                activeContent.removeClass('assortment__box--active');
-                activeContent.addClass('hide');
-                targetContent.removeClass('hide');
-                targetContent.removeClass('invisible');
-                targetContent.addClass('assortment__box--active');
-            }, 300);
-        });
+    // Табы в ассортименте
+    const tabsContent = document.querySelectorAll('.assortment__box');
+    tabsContent.forEach(element => {
+        $(element).addClass('hide');
+        $(element).addClass('invisible');
+    })
+    $(tabsContent[0]).removeClass('hide');
+    $(tabsContent[0]).removeClass('invisible');
+    $('.assortment__filter-btn').on('click', function(event) {
+        event.preventDefault;
+        let targetName = $(event.target).attr('value'),
+            activeBtn = $('.assortment__filter-btn--active'),
+            activeContent = $('.assortment__box--active'),
+            targetContent = $('.assortment__box--' + targetName);
+        $(event.target).addClass('assortment__filter-btn--active');
+        activeContent.addClass('invisible')
+        setTimeout(function() {
+            activeBtn.removeClass('assortment__filter-btn--active');
+            activeContent.removeClass('assortment__box--active');
+            activeContent.addClass('hide');
+            targetContent.removeClass('hide');
+            targetContent.removeClass('invisible');
+            targetContent.addClass('assortment__box--active');
+        }, 300);
+    });
 
-        // SlickSlider
-        $('.reviews__view').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            dots: true,
-            fade: true,
-            asNavFor: '.reviews__nav'
-        });
-        $('.reviews__nav').slick({
-            vertical: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            arrows: false,
-            asNavFor: '.reviews__view',
-            focusOnSelect: true
-        });
+    // SlickSlider
+    $('.reviews__view').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        fade: true,
+        asNavFor: '.reviews__nav'
+    });
+    $('.reviews__nav').slick({
+        vertical: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: '.reviews__view',
+        focusOnSelect: true
+    });
 
-        $('.gallery__slider').slick({
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            pauseOnHover: true,
-            pauseOnDotsHover: true,
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            dots: false,
-            responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                }
-            }, {
-                breakpoint: 780,
-                settings: {
-                    slidesToShow: 1,
-                }
-            }]
+    $('.gallery__slider').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        pauseOnDotsHover: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2,
+            }
+        }, {
+            breakpoint: 780,
+            settings: {
+                slidesToShow: 1,
+            }
+        }]
 
-        });
+    });
 
-        // Плавный скролл
-        $('.nav__link, .order-btn').on('click', function(event) {
-            event.preventDefault();
-            var id = $(this).attr('href');
-            var element = $(id).offset().top;
-            $('body,html').animate({
-                scrollTop: element
-            }, 500);
-        });
+    // Плавный скролл
+    $('.nav__link, .order-btn').on('click', function(event) {
+        event.preventDefault();
+        var id = $(this).attr('href');
+        var element = $(id).offset().top;
+        $('body,html').animate({
+            scrollTop: element
+        }, 500);
+    });
 
-        // События при прокрутке экрана
-        $(window).on('scroll', function() {
-            // Кнопка наверх
-            if ($(this).scrollTop() > $('#assortment').offset().top + 500) {
-                $('.top-btn').fadeIn();
-            } else {
-                $('.top-btn').fadeOut();
+    // События при прокрутке экрана
+    $(window).on('scroll', function() {
+        // Кнопка наверх
+        if ($(this).scrollTop() > $('#assortment').offset().top + 500) {
+            $('.top-btn').fadeIn();
+        } else {
+            $('.top-btn').fadeOut();
+        }
+
+        // Кнопка корзины
+        count = Number(document.querySelector('.cart__counter').textContent);
+        if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
+            $('.cart__btn').addClass('fixed-btn');
+        } else {
+            $('.cart__btn').removeClass('fixed-btn');
+        }
+
+    });
+    // переход по кнопке наверх
+    $('.top-btn').on('click', function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+
+
+    //
+    //  КОРЗИНА
+    //
+
+    // Открытие корзины
+    $('.cart__btn').on('click', function(event) {
+        event.preventDefault();
+        reCalc();
+        $('.popup__wrapper').fadeIn();
+        $('.cart').show();
+        $('.confirm').hide();
+        $('body').addClass('fixed');
+    });
+    // Закрытие корзины при нажатии вне
+    $('.popup, .nav__link').on('click', function(event) {
+        if (!$(event.target).closest('.into').length) {
+            hidePopPup();
+        }
+    });
+
+    let rows = document.querySelector('.cart__row-box');
+    // Добавление новой строки в корзину
+    $('.card__button').on('click', function(event) {
+        let card = event.target.parentElement.parentElement.parentElement,
+            types = ["Торт", "Пироженное", "Эклер", "", ""],
+            elementId = '#code' + card.id,
+            element = document.querySelector(elementId);
+        if (typeof element != 'undefined' && element != null) {
+            element.querySelector('input.row__input').value =
+                Number(element.querySelector('input.row__input').value) +
+                Number(card.querySelector('input.card__input').value)
+        } else {
+            let type = types[card.getAttribute('type')],
+                title = card.querySelector('.card__title').textContent,
+                count = card.querySelector('input.card__input').value,
+                price = card.querySelector('.card__price').textContent,
+                unit = card.querySelector('.card__unit').textContent,
+                row = createCartRow(
+                    type,
+                    title,
+                    count,
+                    price,
+                    unit
+                );
+            row.id = 'code' + card.id;
+            rows.append(row);
+            $('.row__input').styler();
+        }
+        reCalc();
+    });
+
+    // Создание новой строки для корзины
+    function createCartRow(type, title, value, cost, unit) {
+        let row = document.createElement('div'),
+            text = document.createElement('p'),
+            select = document.createElement('div'),
+            box = document.createElement('div'),
+            price = document.createElement('span'),
+            per = document.createElement('span'),
+            input = document.createElement('input'),
+            btn = document.createElement('button');
+
+        row.classList.add('cart__row');
+        row.classList.add('row');
+        text.classList.add('row__text');
+        select.classList.add('row__select-box');
+        box.classList.add('row__price-box');
+        price.classList.add('row__price');
+        per.classList.add('row__unit');
+        input.classList.add('row__input');
+        btn.classList.add('row__delete-btn');
+
+        input.setAttribute('type', 'number');
+        input.setAttribute('min', '1');
+        input.setAttribute('max', '99');
+        input.setAttribute('value', value);
+
+        text.textContent = (type == "") ? title : type + ' «' + title + '»';
+        price.textContent = cost;
+        per.textContent = unit;
+
+        box.append(price);
+        box.innerHTML = box.innerHTML + ' ₽/';
+        box.append(per);
+
+        select.append(box);
+        select.append(input);
+
+        row.append(text);
+        row.append(select);
+        row.append(btn);
+
+        return row;
+    }
+
+    // Удаление строки в корзине
+    $(document).on('click', '.row__delete-btn', function(event) {
+        event.target.parentElement.remove();
+        reCalc();
+    });
+
+    // Пресчет товара в корзине
+    function reCalc() {
+        let price = document.querySelectorAll('.row__price'),
+            input = document.querySelectorAll('input.row__input'),
+            total = document.querySelector('.cart__total-digit'),
+            counter = document.querySelector('.cart__counter'),
+            count = 0,
+            sum = 0;
+        if (price.length > 0) {
+            for (let i = 0; i < price.length; i++) {
+                sum = sum + price[i].textContent * input[i].value;
+                count = count + Number(input[i].value);
             }
 
-            // Кнопка корзины
-            count = Number(document.querySelector('.cart__counter').textContent);
-            if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
+        }
+        if (count > 0) {
+            $(counter).fadeIn();
+            $('.cart__total').show();
+            $('.cart__total-text').text('Итого к оплате:');
+            $('.cart__submit').text('Оформить заказ');
+            if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
                 $('.cart__btn').addClass('fixed-btn');
-            } else {
-                $('.cart__btn').removeClass('fixed-btn');
             }
-
-        });
-        // переход по кнопке наверх
-        $('.top-btn').on('click', function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 500);
-            return false;
-        });
-
-
-        //
-        //  КОРЗИНА
-        //
-
-        // Открытие корзины
-        $('.cart__btn').on('click', function(event) {
-            event.preventDefault();
-            reCalc();
-            $('.popup__wrapper').fadeIn();
-            $('.cart').show();
-            $('.confirm').hide();
-            $('body').addClass('fixed');
-        });
-        // Закрытие корзины при нажатии вне
-        $('.popup, .nav__link').on('click', function(event) {
-            if (!$(event.target).closest('.into').length) {
-                hidePopPup();
-            }
-        });
-
-        let rows = document.querySelector('.cart__row-box');
-        // Добавление новой строки в корзину
-        $('.card__button').on('click', function(event) {
-            let card = event.target.parentElement.parentElement.parentElement,
-                types = ["Торт", "Пироженное", "Эклер", "", ""],
-                elementId = '#code' + card.id,
-                element = document.querySelector(elementId);
-            if (typeof element != 'undefined' && element != null) {
-                element.querySelector('input.row__input').value =
-                    Number(element.querySelector('input.row__input').value) +
-                    Number(card.querySelector('input.card__input').value)
-            } else {
-                let type = types[card.getAttribute('type')],
-                    title = card.querySelector('.card__title').textContent,
-                    count = card.querySelector('input.card__input').value,
-                    price = card.querySelector('.card__price').textContent,
-                    unit = card.querySelector('.card__unit').textContent,
-                    row = createCartRow(
-                        type,
-                        title,
-                        count,
-                        price,
-                        unit
-                    );
-                row.id = 'code' + card.id;
-                rows.append(row);
-                $('.row__input').styler();
-            }
-            reCalc();
-        });
-
-        // Создание новой строки для корзины
-        function createCartRow(type, title, value, cost, unit) {
-            let row = document.createElement('div'),
-                text = document.createElement('p'),
-                select = document.createElement('div'),
-                box = document.createElement('div'),
-                price = document.createElement('span'),
-                per = document.createElement('span'),
-                input = document.createElement('input'),
-                btn = document.createElement('button');
-
-            row.classList.add('cart__row');
-            row.classList.add('row');
-            text.classList.add('row__text');
-            select.classList.add('row__select-box');
-            box.classList.add('row__price-box');
-            price.classList.add('row__price');
-            per.classList.add('row__unit');
-            input.classList.add('row__input');
-            btn.classList.add('row__delete-btn');
-
-            input.setAttribute('type', 'number');
-            input.setAttribute('min', '1');
-            input.setAttribute('max', '99');
-            input.setAttribute('value', value);
-
-            text.textContent = (type == "") ? title : type + ' «' + title + '»';
-            price.textContent = cost;
-            per.textContent = unit;
-
-            box.append(price);
-            box.innerHTML = box.innerHTML + ' ₽/';
-            box.append(per);
-
-            select.append(box);
-            select.append(input);
-
-            row.append(text);
-            row.append(select);
-            row.append(btn);
-
-            return row;
+        } else {
+            $(counter).fadeOut();
+            $('.cart__total').hide();
+            $('.cart__total-text').text('Корзина пуста');
+            $('.cart__submit').text('Закрыть');
+            $('.cart__btn').removeClass('fixed-btn');
         }
-
-        // Удаление строки в корзине
-        $(document).on('click', '.row__delete-btn', function(event) {
-            event.target.parentElement.remove();
-            reCalc();
-        });
-
-        // Пресчет товара в корзине
-        function reCalc() {
-            let price = document.querySelectorAll('.row__price'),
-                input = document.querySelectorAll('input.row__input'),
-                total = document.querySelector('.cart__total-digit'),
-                counter = document.querySelector('.cart__counter'),
-                count = 0,
-                sum = 0;
-            if (price.length > 0) {
-                for (let i = 0; i < price.length; i++) {
-                    sum = sum + price[i].textContent * input[i].value;
-                    count = count + Number(input[i].value);
-                }
-
-            }
-            if (count > 0) {
-                $(counter).fadeIn();
-                $('.cart__total').show();
-                $('.cart__total-text').text('Итого к оплате:');
-                $('.cart__submit').text('Оформить заказ');
-                if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
-                    $('.cart__btn').addClass('fixed-btn');
-                }
-            } else {
-                $(counter).fadeOut();
-                $('.cart__total').hide();
-                $('.cart__total-text').text('Корзина пуста');
-                $('.cart__submit').text('Закрыть');
-                $('.cart__btn').removeClass('fixed-btn');
-            }
-            if (count > 99) {
-                count = "K+"
-            }
-            counter.textContent = count;
-            total.textContent = sum;
-        };
-
-        // Обработка измениения кол-ва в корзине кнопками
-        $(document).on('input', 'input.row__input', function() {
-            reCalc();
-        });
-
-        // Подтверждение корзины (переход к вводу дперсональных данных)
-        $('.cart__submit').on('click', function() {
-            if ($('.cart__counter').text() == 0) {
-                hidePopPup();
-                return;
-            }
-            $('.cart').fadeOut();
-            setTimeout(showConfirm, 500);
-        });
-
-        // Показ окна ввода персональных данных
-        function showConfirm() {
-            $('.confirm').fadeIn();
+        if (count > 99) {
+            count = "K+"
         }
-
-        // Скрытие всплывающих окон
-        function hidePopPup() {
-            $('.popup__wrapper').fadeOut();
-            $('body').removeClass('fixed');
-            $('.into').hide();
-            $('.nav__list').removeClass('show');
-        }
-
+        counter.textContent = count;
+        total.textContent = sum;
     };
+
+    // Обработка измениения кол-ва в корзине кнопками
+    $(document).on('input', 'input.row__input', function() {
+        reCalc();
+    });
+
+    // Подтверждение корзины (переход к вводу дперсональных данных)
+    $('.cart__submit').on('click', function() {
+        if ($('.cart__counter').text() == 0) {
+            hidePopPup();
+            return;
+        }
+        $('.cart').fadeOut();
+        setTimeout(showConfirm, 500);
+    });
+
+    // Показ окна ввода персональных данных
+    function showConfirm() {
+        $('.confirm').fadeIn();
+    }
+
+    // Скрытие всплывающих окон
+    function hidePopPup() {
+        $('.popup__wrapper').fadeOut();
+        $('body').removeClass('fixed');
+        $('.into').hide();
+        $('.nav__list').removeClass('show');
+    }
+
+};
