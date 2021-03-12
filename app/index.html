@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эклер. Сладкая мастерская</title>
 
+    <link rel="shortcut icon" href="/images/main/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -77,25 +78,9 @@
     <section class="assortment decor">
         <div class="container">
             <h2 class="assortment__title title" id="assortment">Ассортимент</h2>
-
-            <div class="assortment__filter">
-                <!-- <button class="assortment__filter-btn assortment__filter-btn--active" value="cakes">Торты</button>
-                <button class="assortment__filter-btn" value="pastries">Пирожные</button>
-                <button class="assortment__filter-btn" value="eclairs">Эклеры</button>
-                <button class="assortment__filter-btn" value="bakery">Выпечка</button>
-                <button class="assortment__filter-btn" value="semi">Полуфабрикаты</button> -->
-            </div>
+            <div class="assortment__filter"></div>
         </div>
-
-        <div class="assortment__content">
-            <!-- <div class="assortment__box assortment__box--cakes assortment__box--active"></div>
-            <div class="assortment__box assortment__box--pastries"></div>
-            <div class="assortment__box assortment__box--eclairs"></div>
-            <div class="assortment__box assortment__box--bakery"></div>
-            <div class="assortment__box assortment__box--semi"></div> -->
-        </div>
-
-
+        <div class="assortment__content"></div>
     </section>
 
     <section class="cakes info" id="cakes">
@@ -209,8 +194,7 @@
                         Для завершения заказа оставьте свой номер телефона и мы свяжемся с Вами.
                     </p>
                     <input class="form__input" type="text" name="name" placeholder="Введите имя" required>
-                    <input class="form__input" type="tel" name="phone" placeholder="Введите номер телефона"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+                    <input class="form__input" type="tel" name="phone" placeholder="Введите номер телефона" required>
                     <button class="form__submit" type="submit">
                         Заказать
                     </button>
@@ -221,7 +205,7 @@
 
     <div class="top-btn"></div>
 
-    <script src="data/products.js"></script>
+    <!-- <script src="data/products.js"></script> -->
     <script src="data/gallery.js"></script>
     <script src="data/reviews.js"></script>
     <script src="js/main.min.js"></script>

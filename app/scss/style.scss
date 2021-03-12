@@ -182,6 +182,13 @@
         color: $text-color-pink;
     }
 
+    &__content {
+        font-weight: 900;
+        text-align: center;
+
+        @extend %N-400;
+    }
+
     &__box {
         display: flex;
         flex-wrap: wrap;
@@ -231,6 +238,7 @@
     &__discription {
         font-size: 18px;
         line-height: 24px;
+        text-align: left;
 
         @extend %N-400;
     }
