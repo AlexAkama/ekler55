@@ -836,17 +836,10 @@
 }
 
 .cart {
-    display: none;
     overflow: auto;
     margin: 3%;
-    border: 1px solid $text-color-brown;
-    border-radius: 22px;
     padding: 30px 10px 15px 20px;
-    min-width: 310px;
     max-height: 95%;
-    font-size: 18px;
-    line-height: 24px;
-    background: #f8fffe;
 
     p {
         display: inline-block;
@@ -970,14 +963,8 @@
 }
 
 .confirm {
-    display: none;
-    border: 1px solid $text-color-brown;
-    border-radius: 22px;
     padding: 30px 20px 15px;
     max-width: 320px;
-    font-size: 18px;
-    line-height: 24px;
-    background: #f8fffe;
 }
 
 .form {
@@ -1002,6 +989,12 @@
         @extend %clear-btn;
         @extend %cart-order-btn;
     }
+}
+
+.response {
+    padding: 30px;
+
+    @extend %dfcc;
 }
 
 // -------------------------------------

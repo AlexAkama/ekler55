@@ -100,6 +100,17 @@ body .fixed-btn {
     background: transparent;
 }
 
+.into {
+    display: none;
+    border: 1px solid $text-color-brown;
+    border-radius: 22px;
+    min-width: 310px;
+    max-height: 95%;
+    font-size: 18px;
+    line-height: 24px;
+    background: #f8fffe;
+}
+
 .error {
     color: #f00;
 }

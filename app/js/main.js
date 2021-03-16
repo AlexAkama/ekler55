@@ -1,3 +1,28 @@
+let filter = document.querySelector('.assortment__filter'),
+    content = document.querySelector('.assortment__content'),
+    response;
+
+let restaurantId = 'rest1',
+    baseURL = 'http://194.63.158.122:3100/deliverycustom',
+    menuLink = baseURL + '/menus/' + restaurantId,
+    orderLink = baseURL + '/orders/' + restaurantId;
+
+let categories = [],
+    products = [],
+    categoryIds = [],
+    categoryNames = [],
+    categoryBox = [];
+
+window.addEventListener('DOMContentLoaded', function() {
+
+    createGalleryItems();
+    createReviewItems();
+
+    getMenu()
+    // getMenuTest()
+
+})
+
 function createReviewItems() {
     let reviewsView = document.querySelector('.reviews__view'),
         reviewsNav = document.querySelector('.reviews__nav');
@@ -204,21 +229,9 @@ function createMenuItems() {
     }
 }
 
-let filter = document.querySelector('.assortment__filter'),
-    content = document.querySelector('.assortment__content'),
-    response;
-
-let link = "http://194.63.158.122:3100/deliverycustom/menus/rest1";
-
-let categories = [],
-    products = [],
-    categoryIds = [],
-    categoryNames = [],
-    categoryBox = [];
-
 function getMenu() {
     let request = new XMLHttpRequest();
-    request.open('GET', link);
+    request.open('GET', menuLink);
     request.setRequestHeader('Authorization', 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==');
     request.send();
     console.log("Запрос отправлен");
@@ -247,14 +260,17 @@ function getMenu() {
     }
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-
-    createGalleryItems();
-    createReviewItems();
-
-    getMenu()
-
-})
+function getMenuTest() {
+    response = localResponse;
+    categories = response.menuItems.categories;
+    products = response.menuItems.products;
+    categories.forEach(c => {
+        categoryIds.push(c.id.replace(/[{}]/gm, ''));
+        categoryNames.push(c.name);
+    });
+    console.log("Получены локальные данные");
+    createMenuItems();
+}
 
 function main() {
 
@@ -531,12 +547,117 @@ function main() {
         $('.confirm').fadeIn();
     }
 
+    // Показ окна информации о заказе
+    function showResponse() {
+        $('.response').fadeIn();
+    }
+
+    // Нажатие кнопку закзазть
+    $('.form__submit').on('click', function(e) {
+        e.preventDefault();
+        $('.confirm').fadeOut();
+        setTimeout(showResponse, 500);
+        let cart = collectCart();
+        sendOrder(cart);
+    });
+
+
     // Скрытие всплывающих окон
     function hidePopPup() {
         $('.popup__wrapper').fadeOut();
         $('body').removeClass('fixed');
         $('.into').hide();
         $('.nav__list').removeClass('show');
+    }
+
+    function sendOrder(cart) {
+        let form = document.querySelector('.form'),
+            formData = new FormData(form),
+            data = {},
+            customer = {},
+            payment = {},
+            pickup = {},
+            price = {},
+            callCenter = {},
+            now = Date.now();
+
+        data['originalOrderId'] = now + '';
+        data['preOrder'] = true;
+        data['createdAt'] = new Date(now + 6 * 60 * 60 * 1000).toISOString();
+
+        customer['name'] = formData.get('name');
+        customer['phone'] = formData.get('phone');
+        data['customer'] = customer;
+
+        payment['type'] = 'cash';
+        data['payment'] = payment;
+
+        data['expeditionType'] = 'pickup';
+
+        pickup['expectedTime'] = data['createdAt'];
+        pickup['taker'] = 'customer';
+        data['pickup'] = pickup;
+
+        data['products'] = cart;
+
+        price['total'] = parseInt(document.querySelector('.cart__total-digit').textContent);
+        price['deliveryFee'] = 0;
+        price['discount'] = 0;
+        data['price'] = price;
+
+        data['personsQuantity'] = 1;
+
+        callCenter['phone'] = '12345678';
+        data['callCenter'] = callCenter;
+
+
+        let jsonData = JSON.stringify(data);
+
+        let request = new XMLHttpRequest(),
+            response = document.querySelector('.response');
+        request.open('POST', orderLink);
+        request.setRequestHeader('Authorization', 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==');
+        request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        request.send(jsonData);
+        console.log("Заказ отправлен");
+        request.onreadystatechange = function() {
+            if (request.readyState < 4) {
+                console.log("Ожидание ответа");
+                response.textContent = "Ждите...";
+            } else if (request.readyState === 4 && request.status == 201) {
+                console.log("Заказ принят");
+                response.classList.remove('error');
+                response.innerHTML = "Ваш заказ принят.<br>Наши операторы скоро с Вами свяжутся.";
+                clearCart();
+                setTimeout(hidePopPup, 3000);
+            } else {
+                console.log("Заказ не принят");
+                response.classList.add('error');
+                response.innerHTML = 'Заказ не принят.<br>Попробуйте позже...'
+                setTimeout(hidePopPup, 3000);
+            }
+        }
+
+    }
+
+    function collectCart() {
+        let cart = document.querySelector('.cart'),
+            rows = cart.querySelectorAll('.cart__row'),
+            cartProducts = [];
+        rows.forEach(function(row) {
+            let product = {};
+            product['id'] = "{" + row.getAttribute('id').replace('code', '') + "}";
+            product['name'] = row.querySelector('.row__text').textContent;
+            product['price'] = row.querySelector('.row__price').textContent;
+            product['quantity'] = row.querySelector('input.row__input').value;
+            cartProducts.push(product);
+        });
+        return cartProducts;
+    }
+
+    function clearCart() {
+        document.querySelector('.cart__row-box').textContent = '';
+        reCalc();
     }
 
 };

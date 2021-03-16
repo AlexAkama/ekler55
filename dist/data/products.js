@@ -1,4 +1,4 @@
-var response = {
+var localResponse = {
     "menuItems": {
         "categories": [{
                 "id": "1",
