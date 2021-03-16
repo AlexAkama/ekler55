@@ -19,7 +19,6 @@ window.addEventListener('DOMContentLoaded', function() {
     createReviewItems();
 
     getMenu()
-    // getMenuTest()
 
 })
 
@@ -258,18 +257,6 @@ function getMenu() {
             content.innerHTML = "Данные не загружены.<br>Попробуйте перезагрузить страницу."
         }
     }
-}
-
-function getMenuTest() {
-    response = localResponse;
-    categories = response.menuItems.categories;
-    products = response.menuItems.products;
-    categories.forEach(c => {
-        categoryIds.push(c.id.replace(/[{}]/gm, ''));
-        categoryNames.push(c.name);
-    });
-    console.log("Получены локальные данные");
-    createMenuItems();
 }
 
 function main() {
