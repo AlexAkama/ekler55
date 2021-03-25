@@ -114,3 +114,16 @@ body .fixed-btn {
 .error {
     color: #f00;
 }
+
+.warning {
+    position: fixed;
+    bottom: 0;
+    padding: 1em 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #f00;
+    opacity: 0.8;
+
+    @extend %N-400;
+}

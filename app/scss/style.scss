@@ -204,6 +204,8 @@
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border-radius: 40px;
     width: 100%;
@@ -220,6 +222,7 @@
 
     &__box {
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         justify-content: space-between;
         padding: 23px;

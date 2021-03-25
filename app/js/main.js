@@ -2,10 +2,11 @@ let filter = document.querySelector('.assortment__filter'),
     content = document.querySelector('.assortment__content'),
     response;
 
-let restaurantId = 'rest1',
-    baseURL = 'http://194.63.158.122:3100/deliverycustom',
+let restaurantId = 'ekler',
+    baseURL = 'http://api.sottos.ru/delivery/ekler/deliverycustom',
     menuLink = baseURL + '/menus/' + restaurantId,
     orderLink = baseURL + '/orders/' + restaurantId;
+auth = 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==';
 
 let categories = [],
     products = [],
@@ -18,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
     createGalleryItems();
     createReviewItems();
 
-    getMenu()
+    getMenu();
 
 })
 
@@ -231,7 +232,7 @@ function createMenuItems() {
 function getMenu() {
     let request = new XMLHttpRequest();
     request.open('GET', menuLink);
-    request.setRequestHeader('Authorization', 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==');
+    request.setRequestHeader('Authorization', auth);
     request.send();
     console.log("Запрос отправлен");
     request.onreadystatechange = function() {
@@ -400,7 +401,7 @@ function main() {
     // Добавление новой строки в корзину
     $('.card__button').on('click', function(event) {
         let card = event.target.parentElement.parentElement.parentElement,
-            types = ["Торт", "Пироженное", "Эклер", "", ""],
+            // types = ["", "", "", "", ""],
             elementId = '#code' + card.id,
             element = document.querySelector(elementId);
         if (typeof element != 'undefined' && element != null) {
@@ -408,13 +409,14 @@ function main() {
                 Number(element.querySelector('input.row__input').value) +
                 Number(card.querySelector('input.card__input').value)
         } else {
-            let type = types[card.getAttribute('type')],
+            let 
+            // type = types[card.getAttribute('type')],
                 title = card.querySelector('.card__title').textContent,
                 count = card.querySelector('input.card__input').value,
                 price = card.querySelector('.card__price').textContent,
                 unit = card.querySelector('.card__unit').textContent,
                 row = createCartRow(
-                    type,
+                    // type,
                     title,
                     count,
                     price,
@@ -428,7 +430,8 @@ function main() {
     });
 
     // Создание новой строки для корзины
-    function createCartRow(type, title, value, cost, unit) {
+    // function createCartRow(type, title, value, cost, unit) {
+    function createCartRow(title, value, cost, unit) {
         let row = document.createElement('div'),
             text = document.createElement('p'),
             select = document.createElement('div'),
@@ -453,7 +456,8 @@ function main() {
         input.setAttribute('max', '99');
         input.setAttribute('value', value);
 
-        text.textContent = (type == "") ? title : type + ' «' + title + '»';
+        // text.textContent = (type == "") ? title : type + ' «' + title + '»';
+        text.textContent = title;
         price.textContent = cost;
         per.textContent = unit;
 
@@ -603,7 +607,7 @@ function main() {
         let request = new XMLHttpRequest(),
             response = document.querySelector('.response');
         request.open('POST', orderLink);
-        request.setRequestHeader('Authorization', 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==');
+        request.setRequestHeader('Authorization', auth);
         request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
         request.send(jsonData);
         console.log("Заказ отправлен");
