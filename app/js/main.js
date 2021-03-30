@@ -5,8 +5,8 @@ let filter = document.querySelector('.assortment__filter'),
 let restaurantId = 'ekler',
     baseURL = 'http://api.sottos.ru/delivery/ekler/deliverycustom',
     menuLink = baseURL + '/menus/' + restaurantId,
-    orderLink = baseURL + '/orders/' + restaurantId;
-auth = 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==';
+    orderLink = baseURL + '/orders/' + restaurantId,
+    auth = 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==';
 
 let categories = [],
     products = [],
@@ -221,7 +221,6 @@ function createMenuItems() {
             categoryBox.push(box);
         }
         console.log("Созданы элементы категорий");
-
         createProductItems();
     } else {
         content.classList.add('error');
@@ -256,6 +255,7 @@ function getMenu() {
             console.log("Ошибка: данные не загружены");
             content.classList.add('error');
             content.innerHTML = "Данные не загружены.<br>Попробуйте перезагрузить страницу."
+            main();
         }
     }
 }
@@ -409,8 +409,8 @@ function main() {
                 Number(element.querySelector('input.row__input').value) +
                 Number(card.querySelector('input.card__input').value)
         } else {
-            let 
-            // type = types[card.getAttribute('type')],
+            let
+                // type = types[card.getAttribute('type')],
                 title = card.querySelector('.card__title').textContent,
                 count = card.querySelector('input.card__input').value,
                 price = card.querySelector('.card__price').textContent,
