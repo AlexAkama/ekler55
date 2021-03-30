@@ -3,7 +3,7 @@ let filter = document.querySelector('.assortment__filter'),
     response;
 
 let restaurantId = 'ekler',
-    baseURL = 'http://api.sottos.ru/delivery/ekler/deliverycustom',
+    baseURL = 'https://api.sottos.ru/delivery/ekler/deliverycustom',
     menuLink = baseURL + '/menus/' + restaurantId,
     orderLink = baseURL + '/orders/' + restaurantId,
     auth = 'Basic ZGVsaXZlcnljdXN0b211c2VyOjJkNjYzYWVlLWE1YWYtNDAwZC04OGZlLTQ4OWVhYTY0YTNmYw==';
