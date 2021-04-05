@@ -147,7 +147,9 @@ function createProductItems() {
 
         card.setAttribute('type', categoryIds.indexOf(products[i].categoryId.replace(/[{}]/gm, '')))
         image.setAttribute('alt', 'product image');
-        image.setAttribute('src', products[i].imageUrl);
+        // image.setAttribute('src', products[i].imageUrl);
+        let httpsUrl = products[i].imageUrl.replace('http:', 'https:');
+        image.setAttribute('src', httpsUrl);
         image.setAttribute('onerror', "this.src='images/main/no-image.png'");
         image.setAttribute('loading', 'lazy');
         input.setAttribute('type', 'number');
@@ -158,10 +160,10 @@ function createProductItems() {
         title.textContent = products[i].name;
         discr.textContent = products[i].description;
         price.textContent = products[i].price;
-        if (products[i].byWeight) {
-            unit.textContent = 'кг';
-        } else {
+        if (products[i].weight == 'шт') {
             unit.textContent = 'шт';
+        } else {
+            unit.textContent = 'кг';
         }
         btn.textContent = "Добавить в корзину"
 
@@ -288,6 +290,7 @@ function main() {
             targetContent = $('.assortment__box--' + targetName);
         $(event.target).addClass('assortment__filter-btn--active');
         activeContent.addClass('invisible')
+        localStorage.setItem('ekler55', targetName);
         setTimeout(function() {
             activeBtn.removeClass('assortment__filter-btn--active');
             activeContent.removeClass('assortment__box--active');
