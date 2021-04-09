@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
     createReviewItems();
 
     getMenu();
+    // main();
 
 })
 
@@ -96,15 +97,20 @@ function createGalleryItems() {
     let galleryBox = document.querySelector('.gallery__slider');
     for (let i = 0; i < gallery.length; i++) {
         let wrapper = document.createElement('div'),
-            image = document.createElement('img');
+            image = document.createElement('img'),
+            number = document.createElement('div');
 
         wrapper.classList.add('gallery__wrapper');
         image.classList.add('gallery__img');
+        number.classList.add('gallery__number');
 
         image.setAttribute('alt', 'gallery image');
         image.setAttribute('src', 'images/content/gallery/' + gallery[i]);
 
+        number.textContent = gallery[i].replace(/\..*/, '');
+
         wrapper.append(image);
+        wrapper.append(number);
         galleryBox.append(wrapper);
     }
 
