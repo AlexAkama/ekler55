@@ -93,6 +93,10 @@ function createReviewItems() {
     }
 }
 
+function byField(field) {
+    return (a, b) => a[field] > b[field] ? 1 : -1;
+}
+
 function createGalleryItems() {
     let galleryBox = document.querySelector('.gallery__slider');
     for (let i = 0; i < gallery.length; i++) {
@@ -253,6 +257,8 @@ function getMenu() {
             response = JSON.parse(request.response);
             categories = response.menuItems.categories;
             products = response.menuItems.products;
+            categories.sort(byField('sortOrder'));
+            products.sort(byField('sortOrder'));
             categories.forEach(c => {
                 categoryIds.push(c.id.replace(/[{}]/gm, ''));
                 categoryNames.push(c.name);
