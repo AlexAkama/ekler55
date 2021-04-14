@@ -209,7 +209,8 @@
     overflow: hidden;
     border-radius: 40px;
     width: 100%;
-    min-height: 580px;
+
+    // min-height: 580px;
     max-width: 370px;
     box-shadow: 0 4px 20px 2px #86a9a6;
 
@@ -226,6 +227,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 5px 23px 23px;
+
         // height: 420px;
     }
 
@@ -239,6 +241,7 @@
     }
 
     &__discription {
+        margin-bottom: 10px;
         font-size: 18px;
         line-height: 24px;
         text-align: left;
