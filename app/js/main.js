@@ -157,9 +157,7 @@ function createProductItems() {
 
         card.setAttribute('type', categoryIds.indexOf(products[i].categoryId.replace(/[{}]/gm, '')))
         image.setAttribute('alt', 'product image');
-        // image.setAttribute('src', products[i].imageUrl);
-        let httpsUrl = products[i].imageUrl.replace('http:', 'https:');
-        image.setAttribute('src', httpsUrl);
+        image.setAttribute('src', products[i].imageUrl);
         image.setAttribute('onerror', "this.src='images/main/no-image.png'");
         image.setAttribute('loading', 'lazy');
         input.setAttribute('type', 'number');
