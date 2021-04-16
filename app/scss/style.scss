@@ -115,25 +115,37 @@
 }
 
 .hollyday {
-    &__slide-inner {
+    &__content {
         @extend %dfsbc;
     }
 
+    &__slider-box {
+        max-width: 300px;
+    }
+
     &__img {
-        width: 500px;
-        height: 500px;
-        min-width: 500px;
-        min-height: 500px;
+        width: 100%;
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .slick-list {
+        border-radius: 40px;
+        max-height: 300px;
+        box-shadow: 6px 10px 10px #8ebab2;
     }
 
     .slick-dots {
-        padding-top: 30px;
+        padding-top: 10px;
+        padding-left: 10px;
 
         button {
             border-color: $text-color-tiffany;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 15px;
+            height: 15px;
             font-size: 0;
             line-height: 0;
             background-color: $bg-color-tiffany-dark;
@@ -146,7 +158,7 @@
         }
 
         li:not(:last-child) {
-            margin-right: 30px;
+            margin-right: 10px;
         }
 
         @extend %dfcc;
