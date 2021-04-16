@@ -340,7 +340,7 @@ function main() {
     $('.gallery__slider').slick({
         dots: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         pauseOnHover: true,
         pauseOnDotsHover: true,
         infinite: true,

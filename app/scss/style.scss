@@ -55,9 +55,11 @@
         }
 
         &__title {
-            // margin-bottom: 60px;
+            margin-bottom: 15px;
+
             // color: $text-color-tiffany-moire;
-            color: $text-color-brown;
+            // color: $text-color-brown;
+            color: #f00;
 
             @extend %title-h2;
         }
@@ -65,8 +67,8 @@
         &__text {
             margin-bottom: 30px;
             padding-left: 30px;
-            font-size: 36px;
-            line-height: 46px;
+            font-size: 30px;
+            line-height: 36px;
             text-align: center;
 
             @extend %F-400;
