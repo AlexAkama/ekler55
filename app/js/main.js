@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', function() {
     createGalleryItems();
     createReviewItems();
 
-    // getMenu();
-    main();
+    getMenu();
+    // main();
 
 })
 
