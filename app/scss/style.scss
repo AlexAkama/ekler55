@@ -7,17 +7,38 @@
 // -------------------------------------
 
 .home {
-    padding: 20px 0 0;
+    padding: 120px 0 0;
     background-image: url(../images/main/bg/home-bg.jpg);
 
+    &__top {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        justify-content: center;
+        padding-bottom: 5px;
+        font-size: 30px;
+        line-height: 36px;
+        color: $text-color-brown-dark;
+        background-color: #fff;
+
+        @extend %dfsbc;
+    }
+
+    &__text {
+        // padding: 0 20px;
+    }
+
     &__wrapper {
-        height: 500px;
+        // height: 500px;
 
         @extend %dfsbc;
     }
 
     &__text-wrapper {
-        max-width: 670px;
+        // max-width: 670px;
+        margin-bottom: 30px;
     }
 
     &__title {
@@ -28,12 +49,84 @@
         @extend %title-h2;
     }
 
+    .hollyday {
+        &__content {
+            @extend %dfsbc;
+        }
+
+        &__title {
+            // margin-bottom: 60px;
+            // color: $text-color-tiffany-moire;
+            color: $text-color-brown;
+
+            @extend %title-h2;
+        }
+
+        &__text {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            font-size: 36px;
+            line-height: 46px;
+            text-align: center;
+
+            @extend %F-400;
+        }
+
+        &__slider-box {
+            max-width: 300px;
+        }
+
+        &__img {
+            width: 100%;
+            height: 300px;
+            max-width: 300px;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .slick-list {
+            border-radius: 40px;
+            max-height: 300px;
+            box-shadow: 6px 10px 10px #8ebab2;
+        }
+
+        .slick-dots {
+            padding-top: 10px;
+            padding-left: 10px;
+
+            button {
+                border-color: $text-color-tiffany;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                font-size: 0;
+                line-height: 0;
+                background-color: $bg-color-tiffany-dark;
+
+                @extend %clear-btn;
+            }
+
+            .slick-active button {
+                background-color: $text-color-tiffany;
+            }
+
+            li:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            @extend %dfcc;
+        }
+    }
+
     @extend %bg-center;
 }
 
 .logo {
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 20px;
+
+    // margin-bottom: 20px;
+    max-width: 150px;
 }
 
 .logo-min {
@@ -112,57 +205,6 @@
 
 .cancel {
     margin-bottom: 10px;
-}
-
-.hollyday {
-    &__content {
-        @extend %dfsbc;
-    }
-
-    &__slider-box {
-        max-width: 300px;
-    }
-
-    &__img {
-        width: 100%;
-        max-width: 300px;
-        max-height: 300px;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    .slick-list {
-        border-radius: 40px;
-        max-height: 300px;
-        box-shadow: 6px 10px 10px #8ebab2;
-    }
-
-    .slick-dots {
-        padding-top: 10px;
-        padding-left: 10px;
-
-        button {
-            border-color: $text-color-tiffany;
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            font-size: 0;
-            line-height: 0;
-            background-color: $bg-color-tiffany-dark;
-
-            @extend %clear-btn;
-        }
-
-        .slick-active button {
-            background-color: $text-color-tiffany;
-        }
-
-        li:not(:last-child) {
-            margin-right: 10px;
-        }
-
-        @extend %dfcc;
-    }
 }
 
 .assortment {
@@ -296,7 +338,7 @@
         margin-bottom: 10px;
         font-size: 18px;
         line-height: 24px;
-        text-align: left;
+        text-align: center;
 
         @extend %N-400;
     }
@@ -615,7 +657,6 @@
     }
 }
 
-.hollyday,
 .delivery {
     min-height: auto;
     background-image: url(../images/main/bg/delivery-bg.jpg);

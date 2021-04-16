@@ -317,7 +317,7 @@ function main() {
         dots: true,
         fade: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 1000,
     });
 
     $('.reviews__view').slick({
@@ -374,7 +374,7 @@ function main() {
     // События при прокрутке экрана
     $(window).on('scroll', function() {
         // Кнопка наверх
-        if ($(this).scrollTop() > $('#assortment').offset().top + 500) {
+        if ($(this).scrollTop() > $('#assortment').offset().top - 300) {
             $('.top-btn').fadeIn();
         } else {
             $('.top-btn').fadeOut();
