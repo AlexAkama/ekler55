@@ -114,6 +114,45 @@
     margin-bottom: 10px;
 }
 
+.hollyday {
+    &__slide-inner {
+        @extend %dfsbc;
+    }
+
+    &__img {
+        width: 500px;
+        height: 500px;
+        min-width: 500px;
+        min-height: 500px;
+    }
+
+    .slick-dots {
+        padding-top: 30px;
+
+        button {
+            border-color: $text-color-tiffany;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 0;
+            line-height: 0;
+            background-color: $bg-color-tiffany-dark;
+
+            @extend %clear-btn;
+        }
+
+        .slick-active button {
+            background-color: $text-color-tiffany;
+        }
+
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        @extend %dfcc;
+    }
+}
+
 .assortment {
     position: relative;
     padding: 135px 0;
@@ -564,6 +603,7 @@
     }
 }
 
+.hollyday,
 .delivery {
     min-height: auto;
     background-image: url(../images/main/bg/delivery-bg.jpg);

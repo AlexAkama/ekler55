@@ -312,6 +312,14 @@ function main() {
     });
 
     // SlickSlider
+    $('.hollyday__slider-box').slick({
+        arrows: false,
+        dots: true,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
     $('.reviews__view').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
