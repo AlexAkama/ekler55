@@ -7,38 +7,75 @@
 // -------------------------------------
 
 .home {
-    padding: 120px 0 0;
+    padding: 0;
     background-image: url(../images/main/bg/home-bg.jpg);
 
-    &__top {
+    .fixed {
         position: fixed;
+        background-image: url(../images/main/bg/home-bg.jpg);
+
+        .nav {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .nav::after {
+            display: none;
+        }
+    }
+
+    &__phone {
+        padding-right: 50px;
+    }
+
+    &__top-wrapper {
+        position: relative;
         left: 0;
         right: 0;
         top: 0;
         z-index: 2;
+        margin: 0 auto;
+    }
+
+    &__top {
+        position: relative;
         justify-content: center;
         padding-bottom: 5px;
         font-size: 30px;
         line-height: 36px;
         color: $text-color-brown-dark;
-        background-color: #fff;
 
         @extend %dfsbc;
     }
 
     &__text {
-        // padding: 0 20px;
+        font-size: 24px;
+        transform: translateY(-50%);
+    }
+
+    &__text:last-child {
+        margin-right: 55px;
     }
 
     &__wrapper {
-        // height: 500px;
-
         @extend %dfsbc;
     }
 
     &__text-wrapper {
-        // max-width: 670px;
         margin-bottom: 30px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-image: url(../images/main/decor/line-art-brown.png);
+            background-size: contain;
+
+            @extend %bg-center;
+        }
     }
 
     &__title {
@@ -124,34 +161,16 @@
     @extend %bg-center;
 }
 
-.logo {
-    margin: 0 20px;
-
-    // margin-bottom: 20px;
-    max-width: 150px;
-}
-
-.logo-min {
-    display: none;
-    margin: 0 auto;
-}
-
 .nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-    &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 50px;
-        background-image: url(../images/main/decor/line-art-brown.png);
-        background-size: contain;
-
-        @extend %bg-center;
-    }
+    transform: translateY(-50%);
 
     &__list {
         display: flex;
@@ -160,8 +179,14 @@
     }
 
     &__list-item {
+        text-align: center;
+
         &:not(:last-child) {
             margin-right: 30px;
+        }
+
+        &:nth-child(4) {
+            margin-right: 180px;
         }
     }
 
@@ -172,7 +197,10 @@
 
 .icon {
     &__box {
-        padding-left: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-90px, -100%);
     }
 
     &__link {
@@ -198,6 +226,16 @@
             fill: $text-color-tiffany;
         }
     }
+}
+
+.logo {
+    margin: 0 20px;
+    max-width: 130px;
+}
+
+.logo-min {
+    display: none;
+    margin: 0 auto;
 }
 
 .mobile-icon {

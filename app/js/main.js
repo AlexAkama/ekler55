@@ -340,7 +340,7 @@ function main() {
     $('.gallery__slider').slick({
         dots: true,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1000,
         pauseOnHover: true,
         pauseOnDotsHover: true,
         infinite: true,
@@ -376,17 +376,19 @@ function main() {
         // Кнопка наверх
         if ($(this).scrollTop() > $('#assortment').offset().top - 300) {
             $('.top-btn').fadeIn();
+            $('.home__top-wrapper').addClass('fixed');
         } else {
             $('.top-btn').fadeOut();
+            $('.home__top-wrapper').removeClass('fixed');
         }
 
         // Кнопка корзины
-        count = Number(document.querySelector('.cart__counter').textContent);
-        if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
-            $('.cart__btn').addClass('fixed-btn');
-        } else {
-            $('.cart__btn').removeClass('fixed-btn');
-        }
+        // count = Number(document.querySelector('.cart__counter').textContent);
+        // if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
+        //     $('.cart__btn').addClass('fixed-btn');
+        // } else {
+        //     $('.cart__btn').removeClass('fixed-btn');
+        // }
 
     });
     // переход по кнопке наверх
@@ -522,15 +524,15 @@ function main() {
             $('.cart__total').show();
             $('.cart__total-text').text('Итого к оплате:');
             $('.cart__submit').text('Оформить заказ');
-            if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
-                $('.cart__btn').addClass('fixed-btn');
-            }
+            // if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
+            //     $('.cart__btn').addClass('fixed-btn');
+            // }
         } else {
             $(counter).fadeOut();
             $('.cart__total').hide();
             $('.cart__total-text').text('Корзина пуста');
             $('.cart__submit').text('Закрыть');
-            $('.cart__btn').removeClass('fixed-btn');
+            // $('.cart__btn').removeClass('fixed-btn');
         }
         if (count > 99) {
             count = "K+"
