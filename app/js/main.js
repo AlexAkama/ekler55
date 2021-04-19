@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', function() {
     createGalleryItems();
     createReviewItems();
 
-    getMenu();
-    // main();
+    // getMenu();
+    main();
 
 })
 
@@ -274,6 +274,8 @@ function getMenu() {
 
 function main() {
 
+    $('.hollyday__text').html(home);
+
     // Мобильное меню
     $('.burger').on('click', function() {
         $('.popup__wrapper').fadeIn();
@@ -365,7 +367,7 @@ function main() {
     $('.nav__link, .order-btn').on('click', function(event) {
         event.preventDefault();
         var id = $(this).attr('href');
-        var element = $(id).offset().top;
+        var element = $(id).offset().top - 50;
         $('body,html').animate({
             scrollTop: element
         }, 500);

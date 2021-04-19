@@ -18,6 +18,17 @@
 }
 
 @media (max-width: 1200px) {
+    .icon__box {
+        right: 10px;
+        top: 10px;
+        transform: unset;
+    }
+
+    .logo {
+        margin: 0 40px;
+        max-width: 100px;
+    }
+
     .nav {
         &__link {
             font-size: 24px;
@@ -25,10 +36,8 @@
     }
 
     .home {
-        min-height: 840px;
-
-        &__wrapper {
-            padding-left: 50px;
+        &__text {
+            font-size: 20px;
         }
 
         &__title {
@@ -43,10 +52,6 @@
         &__img {
             max-width: 350px;
         }
-    }
-
-    .top-btn {
-        right: 50px;
     }
 
     .offers {
@@ -103,23 +108,58 @@
 
 @media (max-width: 998px) {
     .home {
+        &__wrapper {
+            padding-left: 0;
+        }
+
         &__title {
             font-size: 42px;
             line-height: 42px;
+        }
+
+        .hollyday {
+            &__slider-box {
+                margin-bottom: 30px;
+            }
+
+            &__text {
+                padding: 0;
+            }
+
+            &__content {
+                flex-direction: column;
+            }
         }
     }
 }
 
 @media (max-width: 940px) {
+    .home {
+        &__text {
+            font-size: 16px;
+        }
+
+        &__phone {
+            padding-right: 30px;
+        }
+    }
+
+    .logo {
+        margin: 10px 15px 0;
+        max-width: 75px;
+    }
+
     .nav {
         &__link {
             font-size: 20px;
         }
+
+        &__list-item:nth-child(4) {
+            margin-right: 100px;
+        }
     }
 
     .home {
-        min-height: 720px;
-
         &__title {
             font-size: 36px;
             line-height: 36px;
@@ -180,13 +220,6 @@
     }
 
     .home {
-        min-height: 610px;
-
-        &__wrapper {
-            padding-left: 30px;
-            height: 350px;
-        }
-
         &__img {
             max-width: 290px;
         }
@@ -251,14 +284,13 @@
     }
 
     .home {
-        min-height: auto;
-
         &__img {
             margin-bottom: 100px;
             max-width: 210px;
         }
     }
 
+    .home .hollyday h2,
     .title {
         margin-bottom: 30px;
         padding-top: 30px;
@@ -324,6 +356,7 @@
         font-size: 24px;
     }
 
+    .home .hollyday h2,
     .title {
         font-size: 38px;
 
@@ -441,6 +474,7 @@
         }
     }
 
+    .home .hollyday h2,
     .title {
         margin-bottom: 20px;
         padding: 20px 0 10px;
@@ -558,6 +592,14 @@
     }
 
     .home {
+
+        .hollyday .slick-list,
+        .hollyday__img,
+        .hollyday__slider-box {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
         &__title {
             font-size: 22px;
             line-height: 22px;
@@ -568,6 +610,7 @@
         }
     }
 
+    .home .hollyday h2,
     .title {
         margin-bottom: 10px;
         font-size: 24px;
