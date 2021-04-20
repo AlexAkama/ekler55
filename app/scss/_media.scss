@@ -30,6 +30,8 @@
     }
 
     .nav {
+        transform: translateY(-25%);
+
         &__link {
             font-size: 24px;
         }
@@ -137,6 +139,7 @@
     .home {
         &__text {
             font-size: 16px;
+            transform: translateY(-25%);
         }
 
         &__phone {
@@ -150,6 +153,8 @@
     }
 
     .nav {
+        transform: translateY(0);
+
         &__link {
             font-size: 20px;
         }
@@ -199,15 +204,6 @@
         }
     }
 
-    .icon {
-        &__box {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            padding: 0;
-        }
-    }
-
     .info p {
         padding: 0 30px;
     }
@@ -254,36 +250,69 @@
     }
 
     .nav {
+        position: absolute;
+        z-index: 99;
+        transform: translateY(-150%);
+        transition: all 0.3s;
+
         &::after {
             display: none;
         }
 
         &__list {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            z-index: 2;
-            display: block;
-            padding: 20px;
-            min-width: 60%;
-            background-color: #f6ede6;
-            transform: translateX(-100%);
+            flex-direction: column;
+            padding-bottom: 20px;
             transition: all 0.3s;
+        }
+
+        &__list-item:not(:last-child) {
+            margin: 0;
+        }
+
+        &__link {
+            display: block;
+            padding: 5px 0;
+            font-size: 30px;
         }
     }
 
-    .mobile-icon {
+    .burger {
         display: inline-block;
     }
 
-    .burger {
+    .mobile-icon {
         position: absolute;
         left: 20px;
-        top: 20px;
+        top: 17px;
+    }
+
+    .icon__box {
+        padding-top: 5px;
     }
 
     .home {
+        .fixed {
+            background-image: unset;
+            background-color: #fff;
+        }
+
+        &__top {
+            z-index: 100;
+            padding: 5px 0;
+        }
+
+        &__text {
+            display: none;
+        }
+
+        &__text-wrapper {
+            padding-top: 10px;
+        }
+
+        &__text-wrapper::before {
+            display: none;
+        }
+
         &__img {
             margin-bottom: 100px;
             max-width: 210px;
@@ -358,6 +387,7 @@
 
     .home .hollyday h2,
     .title {
+        padding-top: 0;
         font-size: 38px;
 
         span {
@@ -404,10 +434,6 @@
 }
 
 @media (max-width: 480px) {
-    .logo-min {
-        margin-bottom: 10px;
-    }
-
     .card {
         margin: 15px 10px;
         min-height: unset;
@@ -477,7 +503,6 @@
     .home .hollyday h2,
     .title {
         margin-bottom: 20px;
-        padding: 20px 0 10px;
         font-size: 28px;
     }
 
@@ -568,7 +593,7 @@
         }
     }
 
-    .burger {
+    .mobile-icon {
         left: 10px;
     }
 
@@ -592,14 +617,6 @@
     }
 
     .home {
-
-        .hollyday .slick-list,
-        .hollyday__img,
-        .hollyday__slider-box {
-            max-width: 200px;
-            max-height: 200px;
-        }
-
         &__title {
             font-size: 22px;
             line-height: 22px;
@@ -607,6 +624,13 @@
 
         &__img {
             max-width: 110px;
+        }
+
+        .hollyday .slick-list,
+        .hollyday__img,
+        .hollyday__slider-box {
+            max-width: 200px;
+            max-height: 200px;
         }
     }
 

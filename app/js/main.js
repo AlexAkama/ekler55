@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', function() {
     createGalleryItems();
     createReviewItems();
 
-    // getMenu();
-    main();
+    getMenu();
+    // main();
 
 })
 
@@ -278,12 +278,16 @@ function main() {
 
     // Мобильное меню
     $('.burger').on('click', function() {
-        $('.popup__wrapper').fadeIn();
-        $('.nav__list').addClass('show');
+        $('body').addClass('fixed');
+        $('.popup__wrapper, .cancel ').fadeIn();
+        $('.burger, .icon__box').fadeOut();
+        $('.nav, .home__top').addClass('show');
     });
     $('.cancel').on('click', function() {
-        $('.nav__list').removeClass('show');
-        $('.popup__wrapper').fadeOut();
+        $('body').removeClass('fixed');
+        $('.nav, .home__top').removeClass('show');
+        $('.burger, .icon__box').fadeIn();
+        $('.popup__wrapper, .cancel').fadeOut();
     })
 
     // Табы в ассортименте
@@ -580,10 +584,11 @@ function main() {
 
     // Скрытие всплывающих окон
     function hidePopPup() {
-        $('.popup__wrapper').fadeOut();
+        $('.popup__wrapper, .cancel').fadeOut();
         $('body').removeClass('fixed');
         $('.into').hide();
-        $('.nav__list').removeClass('show');
+        $('.show .burger, .icon__box').fadeIn();
+        $('.nav, .home__top').removeClass('show');
     }
 
     function sendOrder(cart) {

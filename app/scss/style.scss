@@ -14,13 +14,6 @@
         position: fixed;
         background-image: url(../images/main/bg/home-bg.jpg);
 
-        .nav {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -10px;
-        }
-
         .nav::after {
             display: none;
         }
@@ -46,6 +39,10 @@
         font-size: 30px;
         line-height: 36px;
         color: $text-color-brown-dark;
+
+        &.show {
+            background-color: #fff;
+        }
 
         @extend %dfsbc;
     }
@@ -169,6 +166,7 @@
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
+    transition: all 0.3s;
 
     &__list {
         display: flex;
@@ -183,7 +181,7 @@
             margin-right: 30px;
         }
 
-        &:nth-child(4) {
+        &:nth-child(3) {
             margin-right: 170px;
         }
     }
@@ -191,6 +189,12 @@
     &__link {
         @extend %nav-link;
     }
+}
+
+.nav.show {
+    position: relative;
+    background-color: #fff;
+    transform: translateY(0);
 }
 
 .icon {

@@ -29,10 +29,6 @@ section {
     max-width: 1170px;
 }
 
-.nav__list.show {
-    transform: translateX(0);
-}
-
 .order-btn {
     @extend %order-btn;
 }
