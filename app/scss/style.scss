@@ -7,11 +7,10 @@
 // -------------------------------------
 
 .home {
-    padding: 0;
+    padding: 90px 0 0;
     background-image: url(../images/main/bg/home-bg.jpg);
 
     .fixed {
-        position: fixed;
         background-image: url(../images/main/bg/home-bg.jpg);
 
         .nav::after {
@@ -24,7 +23,7 @@
     }
 
     &__top-wrapper {
-        position: relative;
+        position: fixed;
         left: 0;
         right: 0;
         top: 0;

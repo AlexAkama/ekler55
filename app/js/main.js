@@ -370,8 +370,8 @@ function main() {
     // Плавный скролл
     $('.nav__link, .order-btn').on('click', function(event) {
         event.preventDefault();
-        var id = $(this).attr('href');
-        var element = $(id).offset().top - 50;
+        let id = $(this).attr('href');
+        let element = $(id).offset().top - 50;
         $('body,html').animate({
             scrollTop: element
         }, 500);
@@ -382,12 +382,15 @@ function main() {
         // Кнопка наверх
         if ($(this).scrollTop() > $('#assortment').offset().top - 300) {
             $('.top-btn').fadeIn();
-            $('.home__top-wrapper').addClass('fixed');
         } else {
             $('.top-btn').fadeOut();
+        }
+        // Фон меню
+        if ($(this).scrollTop() > 0) {
+            $('.home__top-wrapper').addClass('fixed');
+        } else {
             $('.home__top-wrapper').removeClass('fixed');
         }
-
         // Кнопка корзины
         // count = Number(document.querySelector('.cart__counter').textContent);
         // if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
@@ -573,7 +576,8 @@ function main() {
     }
 
     // Нажатие кнопку закзазть
-    $('.form__submit').on('click', function(e) {
+    $('.form').on('submit', function(e) {
+        console.log('submit');
         e.preventDefault();
         $('.confirm').fadeOut();
         setTimeout(showResponse, 500);
