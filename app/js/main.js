@@ -281,11 +281,11 @@ function main() {
         $('body').addClass('fixed');
         $('.popup__wrapper, .cancel ').fadeIn();
         $('.burger, .icon__box').fadeOut();
-        $('.nav, .home__top').addClass('show');
+        $('.nav, .home__top, .home__top-wrapper').addClass('show');
     });
     $('.cancel').on('click', function() {
         $('body').removeClass('fixed');
-        $('.nav, .home__top').removeClass('show');
+        $('.nav, .home__top, .home__top-wrapper').removeClass('show');
         $('.burger, .icon__box').fadeIn();
         $('.popup__wrapper, .cancel').fadeOut();
     })
@@ -391,13 +391,6 @@ function main() {
         } else {
             $('.home__top-wrapper').removeClass('fixed');
         }
-        // Кнопка корзины
-        // count = Number(document.querySelector('.cart__counter').textContent);
-        // if ($(this).scrollTop() > $('#assortment').offset().top - 200 && count > 0) {
-        //     $('.cart__btn').addClass('fixed-btn');
-        // } else {
-        //     $('.cart__btn').removeClass('fixed-btn');
-        // }
 
     });
     // переход по кнопке наверх
@@ -433,7 +426,6 @@ function main() {
     // Добавление новой строки в корзину
     $('.card__button').on('click', function(event) {
         let card = event.target.parentElement.parentElement.parentElement,
-            // types = ["", "", "", "", ""],
             elementId = '#code' + card.id,
             element = document.querySelector(elementId);
         if (typeof element != 'undefined' && element != null) {
@@ -442,13 +434,11 @@ function main() {
                 Number(card.querySelector('input.card__input').value)
         } else {
             let
-                // type = types[card.getAttribute('type')],
                 title = card.querySelector('.card__title').textContent,
                 count = card.querySelector('input.card__input').value,
                 price = card.querySelector('.card__price').textContent,
                 unit = card.querySelector('.card__unit').textContent,
                 row = createCartRow(
-                    // type,
                     title,
                     count,
                     price,
@@ -462,7 +452,6 @@ function main() {
     });
 
     // Создание новой строки для корзины
-    // function createCartRow(type, title, value, cost, unit) {
     function createCartRow(title, value, cost, unit) {
         let row = document.createElement('div'),
             text = document.createElement('p'),
@@ -488,7 +477,6 @@ function main() {
         input.setAttribute('max', '99');
         input.setAttribute('value', value);
 
-        // text.textContent = (type == "") ? title : type + ' «' + title + '»';
         text.textContent = title;
         price.textContent = cost;
         per.textContent = unit;
@@ -533,15 +521,11 @@ function main() {
             $('.cart__total').show();
             $('.cart__total-text').text('Итого к оплате:');
             $('.cart__submit').text('Оформить заказ');
-            // if ($(window).scrollTop() > $('#assortment').offset().top - 200) {
-            //     $('.cart__btn').addClass('fixed-btn');
-            // }
         } else {
             $(counter).fadeOut();
             $('.cart__total').hide();
             $('.cart__total-text').text('Корзина пуста');
             $('.cart__submit').text('Закрыть');
-            // $('.cart__btn').removeClass('fixed-btn');
         }
         if (count > 99) {
             count = "K+"
@@ -570,7 +554,19 @@ function main() {
         $('.confirm').fadeIn();
     }
 
-    // Показ окна информации о заказе
+    // Преключение доставки
+    $('.radio__input--pickup').on('click', function() {
+        $('.form__input--address').fadeOut();
+        $('.form__input--address').prop('disabled', true);
+        $('.form__input--address').prop('required', false);
+    });
+    $('.radio__input--delivery').on('click', function() {
+        $('.form__input--address').fadeIn();
+        $('.form__input--address').prop('disabled', false);
+        $('.form__input--address').prop('required', true);
+    });
+
+    // Показ окна информации о заказе (ответ сервера)
     function showResponse() {
         $('.response').fadeIn();
     }
@@ -592,7 +588,7 @@ function main() {
         $('body').removeClass('fixed');
         $('.into').hide();
         $('.show .burger, .icon__box').fadeIn();
-        $('.nav, .home__top').removeClass('show');
+        $('.nav, .home__top, .home__top-wrapper').removeClass('show');
     }
 
     function sendOrder(cart) {
@@ -601,7 +597,6 @@ function main() {
             data = {},
             customer = {},
             payment = {},
-            pickup = {},
             price = {},
             callCenter = {},
             now = Date.now();
@@ -614,14 +609,34 @@ function main() {
         customer['phone'] = formData.get('phone');
         data['customer'] = customer;
 
-        payment['type'] = 'cash';
+        payment['type'] = formData.get('payment');
         data['payment'] = payment;
 
-        data['expeditionType'] = 'pickup';
+        let type = formData.get('type');
+        data['expeditionType'] = type;
 
-        pickup['expectedTime'] = data['createdAt'];
-        pickup['taker'] = 'customer';
-        data['pickup'] = pickup;
+        if (type == 'pickup') {
+            let pickup = {};
+            pickup['expectedTime'] = data['createdAt'];
+            pickup['taker'] = 'customer';
+            data['pickup'] = pickup;
+        } else {
+            let delivery = {},
+                address = {},
+                city = {},
+                street = {},
+                coordinates = {};
+            delivery['expectedTime'] = data['createdAt'];
+            city['name'] = 'Омск';
+            street['name'] = formData.get('address');
+            address['city'] = city;
+            address['street'] = street;
+            coordinates['latitude'] = '';
+            coordinates['longitude'] = '';
+            address['coordinates'] = coordinates;
+            delivery['address'] = address;
+            data['delivery'] = delivery;
+        }
 
         data['products'] = cart;
 
@@ -634,7 +649,6 @@ function main() {
 
         callCenter['phone'] = '12345678';
         data['callCenter'] = callCenter;
-
 
         let jsonData = JSON.stringify(data);
 

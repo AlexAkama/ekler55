@@ -17,7 +17,7 @@
             <div class="container">
 
                 <div class="home__top">
-                    <p class="home__text home__adress">
+                    <p class="home__text home__address">
                         г. Омск, ул. Ленина, 21
                     </p>
                     <div class="">
@@ -104,7 +104,6 @@
 
     <section class="assortment decor" id="assortment">
         <div class="container">
-            <!-- <h2 class="assortment__title title">Ассортимент</h2> -->
             <div class="assortment__filter"></div>
         </div>
         <div class="assortment__content"></div>
@@ -219,14 +218,53 @@
             </div>
             <div class="confirm into">
                 <form class="form" action="">
-                    <p class="form__text">
-                        Для завершения заказа оставьте свой номер телефона и мы свяжемся с Вами.
-                    </p>
-                    <input class="form__input" type="text" name="name" placeholder="Введите имя" required>
+                    <p class="form__text"> Для завершения заказа оставьте свой номер телефона и мы свяжемся с Вами. </p>
+                    <input class="form__input" type="name" name="name" placeholder="Введите имя" required>
                     <input class="form__input" type="tel" name="phone" placeholder="Введите номер телефона" required>
-                    <button class="form__submit" type="submit">
-                        Заказать
-                    </button>
+                    <div class="radio__box">
+                        <label class="radio__label">
+                            <input class="radio__input radio__input--pickup" type="radio" name="type" value="pickup"
+                                checked>
+                            <span class="radio__icon"></span>
+                            Самовывоз
+                        </label>
+                        <label class="radio__label">
+                            <input class="radio__input radio__input--delivery" type="radio" name="type"
+                                value="delivery">
+                            <span class="radio__icon"></span>
+                            Доставка
+                        </label>
+                    </div>
+                    <input class="form__input form__input--address" type="address" name="address"
+                        placeholder="Введите адрес доставки" disabled>
+
+                    <div class="payment">
+                        <p class="payment__title">Способы оплаты</p>
+                        <label class="radio__label">
+                            <input class="radio__input radio__input--cash" type="radio" name="payment" value="cash"
+                                checked>
+                            <span class="radio__icon"></span>
+                            Оплата наличными при получении
+                        </label>
+                        <label class="radio__label">
+                            <input class="radio__input radio__input--card" type="radio" name="payment" value="card">
+                            <span class="radio__icon"></span>
+                            Оплата картой при получении
+                        </label>
+                    </div>
+
+                    <div class="agreement">
+                        <label class="agreement__label">
+                            <input class="agreement__input" type="checkbox" name="agreement" required>
+                            <span class="agreement__icon"></span>
+                        </label>
+                        <div class="agreement__text">Нажимая кнопку "Отправить", Я подтверждаю, что "даю согласие по
+                            установленной форме на обработку моих персональных данных, и что я ознакомлен и согласен с
+                            текстом согласия на обработку персональных данных, с условиями Пользовательского соглашения
+                            и политикой в сфере обработки персональных данных"</div>
+                    </div>
+
+                    <button class="form__submit" type="submit"> Заказать </button>
                 </form>
             </div>
             <div class="response into"></div>
@@ -234,8 +272,6 @@
     </div>
 
     <div class="top-btn"></div>
-
-    <div class="warning">Внимание! Сайт работает в тестовом режиме.</div>
 
     <script src="data/home.js"></script>
     <script src="data/gallery.js"></script>

@@ -31,6 +31,10 @@
         margin: 0 auto;
     }
 
+    &__top-wrapper.show {
+        z-index: 11;
+    }
+
     &__top {
         position: relative;
         justify-content: center;
@@ -982,7 +986,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 10;
     background-color: #0009;
 
     &__wrapper {
@@ -995,7 +999,7 @@
 .cart {
     overflow: auto;
     margin: 3%;
-    padding: 30px 10px 15px 20px;
+    padding: 15px 10px 15px 20px;
     max-height: 95%;
 
     p {
@@ -1120,7 +1124,8 @@
 }
 
 .confirm {
-    padding: 30px 20px 15px;
+    overflow: auto;
+    padding: 15px 20px;
     max-width: 320px;
 }
 
@@ -1139,12 +1144,117 @@
         height: 40px;
     }
 
+    &__input--address {
+        display: none;
+    }
+
     &__submit {
         display: block;
         margin: 0 auto 10px;
 
         @extend %clear-btn;
         @extend %cart-order-btn;
+    }
+
+    @extend %N-400;
+}
+
+.radio {
+    &__box {
+        justify-content: space-around;
+        margin-bottom: 20px;
+        padding-left: 20px;
+
+        @extend %dfcc;
+    }
+
+    &__label {
+        position: relative;
+    }
+
+    &__input {
+        @extend %clear-checkbox;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        margin-left: -20px;
+        border: 2px solid $text-color-tiffany;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+    }
+
+    &__input:checked + &__icon::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        background-color: $text-color-tiffany;
+        transform: translate(-50%, -50%);
+    }
+
+    &__input:focus + &__icon {
+        box-shadow: 0 0 0 2px rgb(255, 247, 11);
+    }
+}
+
+.agreement {
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 20px;
+
+    &__label {
+        position: relative;
+    }
+
+    &__input {
+        @extend %clear-checkbox;
+    }
+
+    &__icon {
+        position: absolute;
+        margin-left: -20px;
+        border: 2px solid $text-color-tiffany;
+        width: 16px;
+        height: 16px;
+    }
+
+    &__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    &__input:checked + &__icon::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        background-color: $text-color-tiffany;
+        transform: translate(-50%, -50%);
+    }
+
+    &__input:focus + &__icon {
+        box-shadow: 0 0 0 2px rgb(255, 247, 11);
+    }
+}
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .radio__label {
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 24px;
     }
 }
 

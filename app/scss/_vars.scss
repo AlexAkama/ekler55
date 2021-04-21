@@ -113,6 +113,14 @@ $spin-text-size-small: 16px;
     }
 }
 
+%clear-checkbox {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    clip: rect(0 0 0 0);
+}
+
 %order-btn {
     outline: none;
     border-radius: 38px;
