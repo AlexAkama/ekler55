@@ -556,14 +556,16 @@ function main() {
 
     // Преключение доставки
     $('.radio__input--pickup').on('click', function() {
-        $('.form__input--address').fadeOut();
-        $('.form__input--address').prop('disabled', true);
-        $('.form__input--address').prop('required', false);
+        let address = $('.form__input--address');
+        address.fadeOut();
+        address.prop('disabled', true);
+        address.prop('required', false);
     });
     $('.radio__input--delivery').on('click', function() {
-        $('.form__input--address').fadeIn();
-        $('.form__input--address').prop('disabled', false);
-        $('.form__input--address').prop('required', true);
+        let address = $('.form__input--address');
+        address.fadeIn();
+        address.prop('disabled', false);
+        address.prop('required', true);
     });
 
     // Показ окна информации о заказе (ответ сервера)
@@ -697,6 +699,15 @@ function main() {
     function clearCart() {
         document.querySelector('.cart__row-box').textContent = '';
         reCalc();
+        clearOrderForm();
+    }
+
+    function clearOrderForm() {
+        document.querySelector('.form').reset();
+        let address = $('.form__input--address');
+        address.fadeOut();
+        address.prop('disabled', true);
+        address.prop('required', false);
     }
 
 };
