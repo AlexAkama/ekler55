@@ -16,6 +16,14 @@ let categories = [],
 
 window.addEventListener('DOMContentLoaded', function() {
 
+    $('.hollyday__slider-box').slick({
+        arrows: false,
+        dots: true,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+    });
+
     createGalleryItems();
     createReviewItems();
 
@@ -318,14 +326,6 @@ function main() {
     });
 
     // SlickSlider
-    $('.hollyday__slider-box').slick({
-        arrows: false,
-        dots: true,
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 1000,
-    });
-
     $('.reviews__view').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -575,12 +575,13 @@ function main() {
 
     // Нажатие кнопку закзазть
     $('.form').on('submit', function(e) {
-        console.log('submit');
+        console.log('Подготовка ');
         e.preventDefault();
         $('.confirm').fadeOut();
         setTimeout(showResponse, 500);
         let cart = collectCart();
         sendOrder(cart);
+
     });
 
 
@@ -605,7 +606,7 @@ function main() {
 
         data['originalOrderId'] = now + '';
         data['preOrder'] = true;
-        data['createdAt'] = new Date(now + 6 * 60 * 60 * 1000).toISOString();
+        data['createdAt'] = new Date(now).toISOString();
 
         customer['name'] = formData.get('name');
         customer['phone'] = formData.get('phone');
